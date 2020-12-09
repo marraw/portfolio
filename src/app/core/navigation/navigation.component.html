@@ -1,0 +1,22 @@
+<button
+  type="button"
+  class="hamburger"
+  (click)="menuOpen = !menuOpen"
+  [ngClass]="menuOpen ? 'menu-open' : ''"
+>
+  <div class="hamburger__box">
+    <div class="hamburger__bar"></div>
+  </div>
+</button>
+
+<nav [ngClass]="menuOpen ? 'menu-open' : ''">
+  <ul class="navlist">
+    <li><a class="navlist__link">About</a></li>
+    <li><a class="navlist__link">Skills</a></li>
+    <li><a class="navlist__link">Projects</a></li>
+    <li><a class="navlist__link">Passion</a></li>
+    <li>
+      <button class="navlist__link navlist__link--cv">Download CV</button>
+    </li>
+  </ul>
+</nav>

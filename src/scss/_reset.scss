@@ -6,9 +6,14 @@
 
 a {
   text-decoration: none;
-  color: #000;
+  -webkit-tap-highlight-color: transparent;
 }
 
 li {
   list-style: none;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
 }
