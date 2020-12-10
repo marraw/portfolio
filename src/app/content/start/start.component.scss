@@ -1,16 +1,22 @@
 @import "../../../scss/variables";
 
 header {
-  position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
-  z-index: 5;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+
+  .logo {
+    position: absolute;
+    z-index: 5;
+    top: 15px;
+    right: 10px;
+    width: 130px;
+  }
 
   .title {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    z-index: 5;
     color: $charcoal;
 
     h1 {
@@ -28,7 +34,11 @@ header {
   }
 
   .media {
-    margin-top: 35px;
+    position: absolute;
+    top: 42%;
+    left: 0;
+    right: 0;
+    z-index: 5;
 
     &__link {
       margin: 0 15px;
@@ -38,7 +48,7 @@ header {
   }
 }
 
-// Waves animation created by Jelena Jovanovic and modified by me.
+// Waves animation adapted from Jelena Jovanovic's project and modified by me.
 .wave-wrapper {
   overflow: hidden;
   position: absolute;
@@ -52,7 +62,7 @@ header {
     position: absolute;
     width: 100%;
     overflow: hidden;
-    height: 100%;
+    height: calc(100% + 1px);
     bottom: -1px;
     background-image: linear-gradient(
       to top,
@@ -117,8 +127,22 @@ header {
   }
 }
 
-@media (min-width: 768px) {
+@media (orientation: landscape) {
   header {
+    .media {
+      top: 52%;
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  header {
+    .logo {
+      top: 25px;
+      right: 15px;
+      width: 200px;
+    }
+
     .title {
       h1 {
         font-size: 60px;
@@ -130,8 +154,6 @@ header {
     }
 
     .media {
-      margin-top: 45px;
-
       &__link {
         margin: 0 25px;
         font-size: 45px;
@@ -150,15 +172,36 @@ header {
 
 @media (min-width: 1024px) {
   header {
-    left: 25vw;
     text-align: left;
 
+    .logo {
+      top: 25px;
+      right: 20px;
+      width: 220px;
+    }
+
+    .title {
+      left: 25vw;
+
+      h1 {
+        font-size: 55px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+    }
+
     .media {
+      top: 45%;
+      left: 25vw;
+
       &__link {
-        margin: 0 50px 0 5px;
+        margin: 0 50px 0 2px;
       }
 
       &__link i {
+        font-size: 45px;
         transition: 0.2s;
 
         &:hover {
@@ -170,6 +213,13 @@ header {
 }
 
 @media (min-width: 1280px) {
+  header {
+    .logo {
+      top: 30px;
+      right: 25px;
+      width: 250px;
+    }
+  }
   .wave {
     background-size: 50% 120px;
   }

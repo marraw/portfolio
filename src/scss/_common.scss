@@ -4,8 +4,88 @@ body {
 
 a {
   -webkit-tap-highlight-color: rgba(lighten($rose, 20%), $alpha: 0.4);
+  color: $seaweed;
 }
 
 button {
   outline-color: $rose;
+}
+
+.page-section {
+  margin-top: 60px;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    font-size: 1.8em;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100px;
+      margin: 5px auto;
+      background-color: rgba($color: $persian, $alpha: 0.8);
+    }
+  }
+
+  &__element {
+    display: block;
+    margin: 25px auto;
+    height: 100%;
+    width: 85%;
+    text-align: justify;
+    color: $charcoal;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .page-section {
+    &__title {
+      font-size: 50px;
+
+      &::after {
+        width: 120px;
+      }
+    }
+
+    &__element {
+      margin: 35px auto;
+      width: 80%;
+      font-size: 25px;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .page-section {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title {
+      flex-basis: 100%;
+    }
+
+    &__element {
+      width: 0;
+      flex-basis: 90%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-section {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__element {
+      font-size: 25px;
+    }
+  }
 }

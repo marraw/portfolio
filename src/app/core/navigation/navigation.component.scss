@@ -11,6 +11,10 @@
   transition: 0.2s;
 }
 
+.hamburger-visible.hamburger {
+  transform: translateX(0);
+}
+
 .hamburger {
   position: fixed;
   top: 15px;
@@ -18,6 +22,8 @@
   z-index: 100;
   display: inline-block;
   padding: 10px;
+  transform: translateX(-110%);
+  transition: transform 0.3s;
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -121,6 +127,11 @@ nav {
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
+  .hamburger {
+    top: 25px;
+    left: 25px;
+  }
+
   nav {
     width: 70vw;
 
@@ -145,8 +156,11 @@ nav {
     display: none;
   }
 
-  nav {
+  .menu-visible {
     transform: translateX(0);
+  }
+
+  nav {
     width: 18vw;
     background-color: transparent;
 

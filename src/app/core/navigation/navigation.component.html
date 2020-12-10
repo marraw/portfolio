@@ -3,13 +3,17 @@
   class="hamburger"
   (click)="menuOpen = !menuOpen"
   [ngClass]="menuOpen ? 'menu-open' : ''"
+  [ngClass]="showHamburger ? 'hamburger-visible' : ''"
 >
   <div class="hamburger__box">
     <div class="hamburger__bar"></div>
   </div>
 </button>
 
-<nav [ngClass]="menuOpen ? 'menu-open' : ''">
+<nav
+  [ngClass]="menuOpen ? 'menu-open' : ''"
+  [ngClass]="showMenu ? 'menu-visible' : ''"
+>
   <ul class="navlist">
     <li>
       <a class="navlist__link"><i class="fas fa-user-alt"></i>About</a>
