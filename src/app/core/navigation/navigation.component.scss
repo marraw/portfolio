@@ -13,9 +13,9 @@
 
 .hamburger {
   position: fixed;
-  top: 20px;
-  left: 25px;
-  z-index: 3;
+  top: 15px;
+  left: 15px;
+  z-index: 100;
   display: inline-block;
   padding: 10px;
   background-color: transparent;
@@ -25,7 +25,7 @@
   &__box {
     position: relative;
     height: 20px;
-    width: 30px;
+    width: 25px;
   }
 
   &__bar {
@@ -34,13 +34,13 @@
     transform: translateY(-50%);
 
     &::before {
-      @include bar(-10px);
+      @include bar(-8px);
 
       content: "";
     }
 
     &::after {
-      @include bar(10px);
+      @include bar(8px);
 
       content: "";
     }
@@ -49,7 +49,7 @@
 
 nav {
   position: fixed;
-  z-index: 2;
+  z-index: 99;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -70,17 +70,24 @@ nav {
     justify-content: space-between;
 
     &__link {
-      padding: 10px 15px;
-      font-size: 30px;
+      display: flex;
+      align-items: center;
+      font-size: 25px;
       cursor: pointer;
       color: $charcoal;
 
+      i {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+
       &--cv {
-        background-color: darken($meadow, 10%);
+        padding: 10px 20px;
+        background-color: $rose;
         color: $white;
         border-radius: 3%;
-        border: 2px solid $charcoal;
-        font-size: 25px;
+        border: 0;
+        font-size: 20px;
       }
     }
   }
@@ -91,11 +98,11 @@ nav {
     background-color: transparent;
 
     &::before {
-      transform: translateY(10px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
     }
 
     &::after {
-      transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
     }
   }
 
@@ -107,22 +114,26 @@ nav {
 @media (orientation: landscape) {
   nav {
     .navlist {
-      top: 15%;
-      height: 70%;
+      top: 10%;
+      height: 80%;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: portrait) {
   nav {
     width: 70vw;
 
     .navlist {
       &__link {
-        font-size: 40px;
+        font-size: 35px;
+
+        i {
+          font-size: 25px;
+        }
 
         &--cv {
-          font-size: 35px;
+          font-size: 30px;
         }
       }
     }
@@ -137,20 +148,35 @@ nav {
   nav {
     transform: translateX(0);
     width: 18vw;
+    background-color: transparent;
 
     .navlist {
       top: 30%;
       height: 40%;
+      align-items: flex-start;
+
+      &__cv {
+        align-self: center;
+      }
 
       &__link {
-        font-size: 30px;
+        font-size: 20px;
+        transition: 0.2s;
+        transform: scale(0.98);
+
+        &:hover {
+          color: $rose;
+          transform: scale(1);
+        }
 
         &--cv {
-          font-size: 20px;
+          font-size: 15px;
           transition: 0.2s;
+          transform: scale(1);
 
           &:hover {
-            background-color: darken($meadow, 20%);
+            color: $white;
+            background-color: darken($rose, 20%);
           }
         }
       }
@@ -164,10 +190,10 @@ nav {
 
     .navlist {
       &__link {
-        font-size: 35px;
+        font-size: 25px;
 
         &--cv {
-          font-size: 25px;
+          font-size: 20px;
         }
       }
     }

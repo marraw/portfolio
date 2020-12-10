@@ -11,12 +11,25 @@
 
 <nav [ngClass]="menuOpen ? 'menu-open' : ''">
   <ul class="navlist">
-    <li><a class="navlist__link">About</a></li>
-    <li><a class="navlist__link">Skills</a></li>
-    <li><a class="navlist__link">Projects</a></li>
-    <li><a class="navlist__link">Passion</a></li>
     <li>
-      <button class="navlist__link navlist__link--cv">Download CV</button>
+      <a class="navlist__link"><i class="fas fa-user-alt"></i>About</a>
+    </li>
+    <li>
+      <a class="navlist__link"><i class="fas fa-code"></i>Skills</a>
+    </li>
+    <li>
+      <a class="navlist__link"><i class="fas fa-th"></i>Projects</a>
+    </li>
+    <li>
+      <a class="navlist__link"><i class="fab fa-hotjar"></i>Passion</a>
+    </li>
+    <li>
+      <a class="navlist__link"><i class="fas fa-address-card"></i>Contact</a>
+    </li>
+    <li class="navlist__cv">
+      <button class="navlist__link navlist__link--cv">
+        <i class="fas fa-file-download"></i>CV
+      </button>
     </li>
   </ul>
 </nav>

@@ -1,0 +1,176 @@
+@import "../../../scss/variables";
+
+header {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: $charcoal;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      margin-top: 15px;
+      font-size: 20px;
+
+      .color {
+        color: $rose;
+      }
+    }
+  }
+
+  .media {
+    margin-top: 35px;
+
+    &__link {
+      margin: 0 15px;
+      font-size: 25px;
+      color: $charcoal;
+    }
+  }
+}
+
+// Waves animation created by Jelena Jovanovic and modified by me.
+.wave-wrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  top: 0;
+  margin: auto;
+
+  &__inner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(
+      to top,
+      lighten($seaweed, 30%) 20%,
+      lighten($meadow, 40%) 80%
+    );
+  }
+}
+
+.bg-top {
+  z-index: 3;
+  opacity: 0.5;
+}
+
+.bg-mid {
+  z-index: 2;
+  opacity: 0.75;
+}
+
+.bg-bot {
+  z-index: 1;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-size: 50% 40px;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave-animation .wave-top {
+  animation: move_wave 5s linear infinite;
+}
+
+.wave-animation .wave-mid {
+  animation: move_wave 15s linear infinite;
+}
+
+.wave-animation .wave-bot {
+  animation: move_wave 20s linear infinite;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@media (min-width: 360px) {
+  .wave {
+    background-size: 50% 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .title {
+      h1 {
+        font-size: 60px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .media {
+      margin-top: 45px;
+
+      &__link {
+        margin: 0 25px;
+        font-size: 45px;
+      }
+    }
+  }
+
+  .wave-wrapper {
+    bottom: 30px;
+
+    .wave {
+      background-size: 50% 80px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    left: 25vw;
+    text-align: left;
+
+    .media {
+      &__link {
+        margin: 0 50px 0 5px;
+      }
+
+      &__link i {
+        transition: 0.2s;
+
+        &:hover {
+          color: $rose;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .wave {
+    background-size: 50% 120px;
+  }
+}

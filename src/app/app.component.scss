@@ -1,11 +1,15 @@
+.start {
+  height: 100vh;
+}
+
 @media (min-width: 1024px) {
-  .container {
+  .content {
     margin-left: 18vw;
   }
 }
 
 @media (min-width: 1280px) {
-  .container {
+  .content {
     margin-left: 15vw;
   }
 }
