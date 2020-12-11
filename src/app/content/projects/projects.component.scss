@@ -1,14 +1,162 @@
 @import "../../../scss/variables";
 
 .page-section__element {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 40px;
+  grid-template-areas:
+    "notes"
+    "tictactoe"
+    "unknown"
+    "unknown-2";
 
-  div {
-    margin: 10px;
-    width: 200px;
-    height: 200px;
-    background-color: $seaweed;
+  .project-card {
+    height: 250px;
+    width: 250px;
+    transition: transform 0.3s;
+    cursor: default;
+
+    &__info {
+      visibility: hidden;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:hover .project-card__info {
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      color: #000;
+      transition: background-color 0.3s;
+      background-color: rgba($white, 0.7);
+    }
+
+    &__technology {
+      font-size: 1.4em;
+      line-height: 1.5;
+
+      &:last-of-type::after {
+        content: "";
+        display: block;
+        margin-top: 15px;
+        height: 2px;
+        width: 200px;
+        background-color: #000;
+      }
+    }
+
+    &__links {
+      a {
+        margin: 0 15px;
+        font-size: 3.4em;
+        color: #000;
+
+        i {
+          transition: color 0.2s;
+
+          &:hover {
+            color: darken($rose, 10%);
+          }
+        }
+      }
+    }
+
+    &--notes {
+      grid-area: notes;
+      background-image: url(../../../assets/projects/notes.png);
+      background-size: cover;
+    }
+
+    &--tictactoe {
+      grid-area: tictactoe;
+      background-image: url(../../../assets/projects/tictactoe.png);
+      background-size: cover;
+    }
+
+    &--unknown {
+      grid-area: unknown;
+      background-color: darken($white, 5%);
+
+      .project-card__info {
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: #000;
+      }
+    }
+
+    &--unknown-2 {
+      grid-area: unknown-2;
+      background-color: darken($white, 5%);
+
+      .project-card__info {
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: #000;
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .page-section__element {
+    .project-card {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .page-section__element {
+    .project-card {
+      height: 400px;
+      width: 400px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-section__element {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "notes tictactoe"
+      "unknown unknown-2";
+
+    .project-card {
+      height: 320px;
+      width: 320px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-section__element {
+    flex-basis: 40%;
+
+    .project-card {
+      height: 380px;
+      width: 380px;
+    }
   }
 }

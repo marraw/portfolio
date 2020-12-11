@@ -20,7 +20,7 @@ button {
 .btn {
   outline-color: $seaweed;
   white-space: nowrap;
-  padding: 10px 15px;
+  padding: 10px 15px !important;
   background-color: darken($meadow, 10%);
   border-radius: 8px;
   color: $white !important;

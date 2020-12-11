@@ -38,7 +38,7 @@
         (click)="scrollToContent(content[3])"
         (keyup)="scrollToContent(content[3])"
         class="navlist__link"
-        ><i class="fas fa-th"></i>Projects</a
+        ><i class="fas fa-th-large"></i>Projects</a
       >
     </li>
     <li>
@@ -61,9 +61,10 @@
 <button
   type="button"
   class="scroll-top"
+  aria-label="Scroll top"
   [ngClass]="showNav ? 'menu-visible' : ''"
   (click)="scrollToContent(content[0])"
   (keyup)="scrollToContent(content[0])"
 >
-  <i class="fas fa-chevron-circle-up"></i>
+  <i class="fas fa-chevron-circle-up" aria-hidden="true"></i>
 </button>
