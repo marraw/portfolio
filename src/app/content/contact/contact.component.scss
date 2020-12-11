@@ -1,0 +1,39 @@
+@import "../../../scss/variables";
+
+.contact-method {
+  margin: 20px auto;
+  display: grid;
+  grid-template-areas:
+    "icon title"
+    "icon text";
+  justify-content: left;
+
+  i {
+    width: 45px;
+    grid-area: icon;
+    font-size: 2.2em;
+    transition: 0.2s;
+  }
+
+  strong {
+    grid-area: title;
+  }
+
+  span {
+    grid-area: text;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-method {
+    i {
+      width: 65px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-method:hover i {
+    color: darken($meadow, 10%);
+  }
+}

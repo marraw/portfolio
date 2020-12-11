@@ -1,0 +1,14 @@
+@import "../../../scss/variables";
+
+.page-section__element {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  div {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: $seaweed;
+  }
+}

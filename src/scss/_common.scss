@@ -3,12 +3,12 @@ body {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(lighten($rose, 20%), $alpha: 0.4);
+  -webkit-tap-highlight-color: rgba(lighten($seaweed, 20%), $alpha: 0.4);
   color: $seaweed;
 }
 
 button {
-  outline-color: $rose;
+  outline-color: $seaweed;
   white-space: nowrap;
 }
 
