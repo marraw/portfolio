@@ -87,17 +87,17 @@ nav {
 
 .scroll-top {
   position: fixed;
-  right: 3vw;
-  bottom: 2vh;
+  right: 4vw;
+  bottom: 3vh;
   border-color: transparent;
   background-color: transparent;
-  outline-color: darken($seaweed, 10%);
+  outline-color: darken($meadow, 10%);
   cursor: pointer;
   transition: 0.2s;
   transform: translateY(calc(150% + 5vh));
 
   i {
-    color: darken($seaweed, 10%);
+    color: darken($meadow, 10%);
     font-size: 45px;
   }
 }
@@ -131,6 +131,11 @@ nav {
       height: 80%;
     }
   }
+
+  .scroll-top {
+    right: 2vw;
+    bottom: 3vh;
+  }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
@@ -158,8 +163,8 @@ nav {
   }
 
   .scroll-top {
-    right: 4vw;
-    bottom: 3vh;
+    right: 5vw;
+    bottom: 4vh;
 
     i {
       font-size: 65px;
@@ -198,16 +203,16 @@ nav {
   }
 
   .scroll-top {
-    right: 4vw;
-    bottom: 5vh;
+    right: 5vw;
+    bottom: 4vh;
 
     i {
       font-size: 65px;
       transition: 0.2s;
-      transform: scale(0.97);
+      transform: scale(0.96);
 
       &:hover {
-        color: darken($seaweed, 15%);
+        color: darken($meadow, 20%);
         transform: scale(1);
       }
     }
@@ -226,8 +231,8 @@ nav {
   }
 
   .scroll-top {
-    right: 5vw;
-    bottom: 6vh;
+    right: 6vw;
+    bottom: 7vh;
 
     i {
       font-size: 70px;

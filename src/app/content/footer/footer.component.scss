@@ -1,0 +1,40 @@
+@import "../../../scss/variables";
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  height: 180px;
+  width: 100%;
+  background-color: darken($white, 5%);
+
+  .author {
+    font-size: 1.2em;
+    color: $charcoal;
+  }
+
+  .media {
+    &__link {
+      margin: 0 15px;
+
+      i {
+        font-size: 1.8em;
+        color: $charcoal;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .media {
+    i {
+      transition: 0.2s;
+
+      &:hover {
+        color: darken($rose, 5%) !important;
+      }
+    }
+  }
+}
