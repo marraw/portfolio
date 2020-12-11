@@ -1,13 +1,13 @@
 @import "../../../scss/variables";
 
 .icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
 
   i {
-    margin: 10px;
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 
@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
 
-  &:hover .tooltip {
+  & i:hover + .tooltip {
     visibility: visible;
   }
 
@@ -28,6 +28,7 @@
     text-align: center;
     border-radius: 4px;
     padding: 5px 0;
+    transform: translateY(6px);
     font-size: 12px;
     z-index: 1;
     opacity: 0.7;
@@ -49,34 +50,23 @@
 @media (min-width: 768px) and (orientation: portrait) {
   .icons {
     i {
-      margin: 20px 30px;
-      font-size: 120px;
+      font-size: 100px;
     }
   }
 }
 
 @media (orientation: landscape) {
   .icons {
-    flex-basis: 50%;
     i {
-      font-size: 80px;
+      font-size: 70px;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .icons {
-    flex-basis: 80%;
-
     i {
-      margin: 20px 35px;
-      font-size: 120px;
+      font-size: 80px;
     }
-  }
-}
-
-@media (min-width: 1280px) {
-  .icons {
-    flex-basis: 60%;
   }
 }

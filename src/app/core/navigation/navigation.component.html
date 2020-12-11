@@ -3,7 +3,6 @@
   class="hamburger"
   (click)="menuOpen = !menuOpen"
   [ngClass]="menuOpen ? 'menu-open' : ''"
-  [ngClass]="showHamburger ? 'hamburger-visible' : ''"
 >
   <div class="hamburger__box">
     <div class="hamburger__bar"></div>
@@ -25,14 +24,11 @@
       <a class="navlist__link"><i class="fas fa-th"></i>Projects</a>
     </li>
     <li>
-      <a class="navlist__link"><i class="fab fa-hotjar"></i>Passion</a>
-    </li>
-    <li>
       <a class="navlist__link"><i class="fas fa-address-card"></i>Contact</a>
     </li>
     <li class="navlist__cv">
       <button class="navlist__link navlist__link--cv">
-        <i class="fas fa-file-download"></i>CV
+        <i class="fas fa-file-download"></i>Download CV
       </button>
     </li>
   </ul>

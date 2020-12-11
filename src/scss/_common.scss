@@ -9,23 +9,21 @@ a {
 
 button {
   outline-color: $rose;
+  white-space: nowrap;
 }
 
 .page-section {
-  margin-top: 60px;
   align-items: center;
 
   &__title {
-    text-align: center;
+    margin: 80px 0 50px 15%;
     font-size: 1.8em;
+    color: $charcoal;
 
-    &::after {
+    &::first-letter {
       content: "";
-      display: block;
-      height: 3px;
-      width: 100px;
-      margin: 5px auto;
-      background-color: rgba($color: $persian, $alpha: 0.8);
+      font-size: 1.4em;
+      background-color: $meadow;
     }
   }
 
@@ -52,7 +50,7 @@ button {
     &__element {
       margin: 35px auto;
       width: 80%;
-      font-size: 25px;
+      font-size: 20px;
       line-height: 1.5;
     }
   }
@@ -60,6 +58,7 @@ button {
 
 @media (orientation: landscape) {
   .page-section {
+    margin: 0 30px;
     display: flex;
     flex-wrap: wrap;
 
@@ -69,23 +68,23 @@ button {
 
     &__element {
       width: 0;
-      flex-basis: 90%;
+      flex-basis: 65%;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .page-section {
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
 
     &__title {
-      font-size: 50px;
+      font-size: 40px;
     }
 
     &__element {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 }

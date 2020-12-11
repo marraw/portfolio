@@ -11,3 +11,9 @@
     flex-basis: 40%;
   }
 }
+
+@media (min-width: 1280px) {
+  .photo {
+    flex-basis: 30%;
+  }
+}
