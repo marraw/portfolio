@@ -2,14 +2,41 @@ body {
   background-color: $white;
 }
 
+::selection {
+  background-color: $meadow;
+}
+
 a {
   -webkit-tap-highlight-color: rgba(lighten($seaweed, 20%), $alpha: 0.4);
   color: $seaweed;
 }
 
-button {
+input,
+textarea {
+  outline-color: transparent;
+}
+
+.btn {
   outline-color: $seaweed;
   white-space: nowrap;
+  padding: 10px 15px;
+  background-color: darken($meadow, 10%);
+  border-radius: 8px;
+  color: $white !important;
+  border: 0;
+  font-size: 1em !important;
+  transform: scale(1) !important;
+  transition: 0.2s;
+  cursor: pointer;
+
+  i {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: darken($meadow, 20%);
+  }
 }
 
 .page-section {

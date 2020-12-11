@@ -1,8 +1,8 @@
 <button
   type="button"
   class="hamburger"
-  (click)="menuOpen = !menuOpen"
-  [ngClass]="menuOpen ? 'menu-open' : ''"
+  (click)="hamburgerOpen = !hamburgerOpen"
+  [ngClass]="hamburgerOpen ? 'menu-open' : ''"
 >
   <div class="hamburger__box">
     <div class="hamburger__bar"></div>
@@ -10,8 +10,8 @@
 </button>
 
 <nav
-  [ngClass]="menuOpen ? 'menu-open' : ''"
-  [ngClass]="showMenu ? 'menu-visible' : ''"
+  [ngClass]="hamburgerOpen ? 'menu-open' : ''"
+  [ngClass]="showNav ? 'menu-visible' : ''"
 >
   <ul class="navlist">
     <li>
@@ -27,9 +27,13 @@
       <a class="navlist__link"><i class="fas fa-address-card"></i>Contact</a>
     </li>
     <li class="navlist__cv">
-      <button class="navlist__link navlist__link--cv">
+      <button class="navlist__link navlist__link--cv btn">
         <i class="fas fa-file-download"></i>Download CV
       </button>
     </li>
   </ul>
 </nav>
+
+<button type="button" class="scroll-top" (click)="scrollTop()">
+  <i class="fas fa-chevron-circle-up"></i>
+</button>

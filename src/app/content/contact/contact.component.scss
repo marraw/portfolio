@@ -1,12 +1,16 @@
 @import "../../../scss/variables";
 
 .contact-method {
-  margin: 20px auto;
+  margin: 20px 0;
   display: grid;
   grid-template-areas:
     "icon title"
     "icon text";
   justify-content: left;
+
+  i:hover {
+    color: darken($meadow, 10%);
+  }
 
   i {
     width: 45px;
@@ -24,16 +28,43 @@
   }
 }
 
-@media (min-width: 768px) {
-  .contact-method {
-    i {
-      width: 65px;
+.contact-form {
+  margin-top: 50px;
+  max-width: 650px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+
+    input,
+    textarea {
+      padding: 2px;
+      font-size: 0.9em;
+      height: 1.8em;
+      background-color: transparent;
+      outline: 0;
+      border: 2px solid transparent;
+      border-bottom: 2px solid rgba($charcoal, 0.2);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 0;
+      border-bottom: 2px solid rgba($seaweed, 0.7);
+    }
+
+    textarea {
+      margin: 10px 0;
+      height: 12em;
     }
   }
 }
 
 @media (min-width: 768px) {
-  .contact-method:hover i {
-    color: darken($meadow, 10%);
+  .contact-method {
+    i {
+      width: 65px;
+    }
   }
 }

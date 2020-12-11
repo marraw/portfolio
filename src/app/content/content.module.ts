@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { StartComponent } from './start/start.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -14,7 +17,7 @@ import { ContactComponent } from './contact/contact.component';
     ProjectsComponent,
     ContactComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   exports: [
     StartComponent,
     AboutComponent,

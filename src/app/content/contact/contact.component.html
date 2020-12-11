@@ -18,6 +18,36 @@
       <span>693 073 365</span>
     </div>
 
-    <div class="contact-form"></div>
+    <div class="contact-form">
+      <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.value)">
+        <div class="contact-form__item">
+          <input
+            placeholder="Name"
+            type="text"
+            name="name"
+            formControlName="name"
+          />
+        </div>
+        <div class="contact-form__item">
+          <input
+            placeholder="Email"
+            type="email"
+            name="email"
+            formControlName="email"
+          />
+        </div>
+        <div class="contact-form__item">
+          <textarea
+            placeholder="How can I help you?"
+            name="message"
+            formControlName="message"
+          >
+          </textarea>
+        </div>
+        <button [disabled]="!messageForm.valid" type="submit" class="btn">
+          <i class="fas fa-paper-plane"></i>Send
+        </button>
+      </form>
+    </div>
   </div>
 </section>
