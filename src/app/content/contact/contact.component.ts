@@ -1,10 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { NavigationService } from 'src/app/core/navigation/navigation.service';
 
 import { message } from './message';
 
@@ -13,10 +20,14 @@ import { message } from './message';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, AfterViewInit {
   messageForm!: FormGroup;
+  @ViewChild('contact') contact!: ElementRef;
 
-  constructor(private builder: FormBuilder) {}
+  constructor(
+    private builder: FormBuilder,
+    private navigationService: NavigationService
+  ) {}
 
   ngOnInit(): void {
     this.messageForm = this.builder.group({
@@ -24,6 +35,10 @@ export class ContactComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.navigationService.content[4] = this.contact;
   }
 
   onSubmit(input: message): void {

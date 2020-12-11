@@ -12,8 +12,9 @@ a {
 }
 
 input,
-textarea {
-  outline-color: transparent;
+textarea,
+button {
+  outline-color: $seaweed;
 }
 
 .btn {
@@ -101,6 +102,11 @@ textarea {
 }
 
 @media (min-width: 1024px) {
+  a {
+    -webkit-tap-highlight-color: transparent;
+    outline-color: $seaweed;
+  }
+
   .page-section {
     margin-top: 20px;
     display: flex;

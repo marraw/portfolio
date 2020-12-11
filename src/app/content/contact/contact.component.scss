@@ -43,15 +43,8 @@
       font-size: 0.9em;
       height: 1.8em;
       background-color: transparent;
-      outline: 0;
       border: 2px solid transparent;
       border-bottom: 2px solid rgba($charcoal, 0.2);
-    }
-
-    input:focus,
-    textarea:focus {
-      outline: 0;
-      border-bottom: 2px solid rgba($seaweed, 0.7);
     }
 
     textarea {

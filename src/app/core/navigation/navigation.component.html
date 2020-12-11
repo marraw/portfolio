@@ -15,16 +15,40 @@
 >
   <ul class="navlist">
     <li>
-      <a class="navlist__link"><i class="fas fa-user-alt"></i>About</a>
+      <a
+        tabindex="0"
+        (click)="scrollToContent(content[1])"
+        (keyup)="scrollToContent(content[1])"
+        class="navlist__link"
+        ><i class="fas fa-user-alt"></i>About</a
+      >
     </li>
     <li>
-      <a class="navlist__link"><i class="fas fa-code"></i>Skills</a>
+      <a
+        tabindex="0"
+        (click)="scrollToContent(content[2])"
+        (keyup)="scrollToContent(content[2])"
+        class="navlist__link"
+        ><i class="fas fa-code"></i>Skills</a
+      >
     </li>
     <li>
-      <a class="navlist__link"><i class="fas fa-th"></i>Projects</a>
+      <a
+        tabindex="0"
+        (click)="scrollToContent(content[3])"
+        (keyup)="scrollToContent(content[3])"
+        class="navlist__link"
+        ><i class="fas fa-th"></i>Projects</a
+      >
     </li>
     <li>
-      <a class="navlist__link"><i class="fas fa-address-card"></i>Contact</a>
+      <a
+        tabindex="0"
+        (click)="scrollToContent(content[4])"
+        (keyup)="scrollToContent(content[4])"
+        class="navlist__link"
+        ><i class="fas fa-address-card"></i>Contact</a
+      >
     </li>
     <li class="navlist__cv">
       <button class="navlist__link navlist__link--cv btn">
@@ -34,6 +58,12 @@
   </ul>
 </nav>
 
-<button type="button" class="scroll-top" (click)="scrollTop()">
+<button
+  type="button"
+  class="scroll-top"
+  [ngClass]="showNav ? 'menu-visible' : ''"
+  (click)="scrollToContent(content[0])"
+  (keyup)="scrollToContent(content[0])"
+>
   <i class="fas fa-chevron-circle-up"></i>
 </button>

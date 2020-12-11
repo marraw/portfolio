@@ -1,13 +1,27 @@
-import { Component, HostListener } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
+import { NavigationService } from './navigation.service';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent {
+export class NavigationComponent implements AfterViewInit {
   hamburgerOpen = false;
   showNav = false;
+
+  content!: ElementRef[];
+
+  constructor(private navigationService: NavigationService) {}
+
+  ngAfterViewInit(): void {
+    this.content = this.navigationService.content;
+  }
 
   @HostListener('window:scroll', ['$event'])
   showNavbar(): void {
@@ -18,14 +32,10 @@ export class NavigationComponent {
     }
   }
 
-  scrollTop(): void {
-    let scroll = window.setInterval(() => {
-      let pos = window.pageYOffset;
-      if (pos > 0) {
-        window.scrollTo(0, pos - 80);
-      } else {
-        window.clearInterval(scroll);
-      }
-    }, 16);
+  scrollToContent(element: ElementRef): void {
+    this.hamburgerOpen = false;
+    element.nativeElement.scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 }

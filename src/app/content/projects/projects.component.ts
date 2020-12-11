@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { NavigationService } from 'src/app/core/navigation/navigation.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements AfterViewInit {
+  @ViewChild('projects') projects!: ElementRef;
 
-  constructor() { }
+  constructor(private navigationService: NavigationService) {}
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.navigationService.content[3] = this.projects;
   }
-
 }

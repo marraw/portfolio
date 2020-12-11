@@ -102,7 +102,7 @@ nav {
   }
 }
 
-.menu-visible + .scroll-top {
+.menu-visible.scroll-top {
   transform: translateY(0);
 }
 
