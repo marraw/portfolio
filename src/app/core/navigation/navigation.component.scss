@@ -69,8 +69,9 @@ nav {
     justify-content: space-between;
 
     &__link {
-      font-size: 25px;
+      font-size: 1.5em;
       padding: 5px 10px;
+      white-space: nowrap;
       cursor: pointer;
 
       i {
@@ -131,6 +132,10 @@ nav {
 
   nav {
     width: 70vw;
+
+    .navlist {
+      height: 50%;
+    }
   }
 
   .scroll-top {
