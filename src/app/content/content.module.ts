@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { StartComponent } from './start/start.component';
 import { AboutComponent } from './about/about.component';
@@ -19,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     ContactComponent,
     FooterComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     StartComponent,
     AboutComponent,

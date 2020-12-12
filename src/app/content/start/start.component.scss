@@ -6,9 +6,9 @@ header {
   .logo {
     position: absolute;
     z-index: 5;
-    top: 15px;
-    right: 10px;
-    width: 130px;
+    top: 4vh;
+    right: 2vw;
+    width: 25vh;
   }
 
   .title {
@@ -17,15 +17,9 @@ header {
     left: 0;
     right: 0;
     z-index: 5;
-    color: $charcoal;
-
-    h1 {
-      font-size: 30px;
-    }
 
     h2 {
       margin-top: 15px;
-      font-size: 20px;
 
       .color {
         color: $rose;
@@ -43,7 +37,6 @@ header {
     &__link {
       margin: 0 15px;
       font-size: 25px;
-      color: $charcoal;
     }
   }
 }
@@ -66,8 +59,8 @@ header {
     bottom: -1px;
     background-image: linear-gradient(
       to top,
-      lighten($seaweed, 25%) 20%,
-      lighten($meadow, 15%) 80%
+      lighten($meadow, 25%) 20%,
+      lighten($seaweed, 15%) 80%
     );
   }
 }
@@ -89,6 +82,7 @@ header {
 .wave {
   position: absolute;
   left: 0;
+  bottom: 0;
   width: 200%;
   height: 100%;
   background-size: 50% 40px;
@@ -98,69 +92,44 @@ header {
 }
 
 .wave-animation .wave-top {
+  background-image: url(../../../assets/waves/wave-top.png);
   animation: move_wave 5s linear infinite;
 }
 
 .wave-animation .wave-mid {
+  background-image: url(../../../assets/waves/wave-mid.png);
   animation: move_wave 15s linear infinite;
 }
 
 .wave-animation .wave-bot {
+  background-image: url(../../../assets/waves/wave-bot.png);
   animation: move_wave 20s linear infinite;
 }
 
 @keyframes move_wave {
   0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
+    transform: translateX(0) scaleY(1);
   }
   50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+    transform: translateX(-25%) scaleY(0.55);
   }
   100% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
-  }
-}
-
-@media (min-width: 360px) {
-  .wave {
-    background-size: 50% 50px;
+    transform: translateX(-50%) scaleY(1);
   }
 }
 
 @media (orientation: landscape) {
   header {
+    .logo {
+      width: 25vw;
+    }
     .media {
-      top: 52%;
+      top: 55%;
     }
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
-  header {
-    .logo {
-      top: 25px;
-      right: 15px;
-      width: 200px;
-    }
-
-    .title {
-      h1 {
-        font-size: 60px;
-      }
-
-      h2 {
-        font-size: 40px;
-      }
-    }
-
-    .media {
-      &__link {
-        margin: 0 25px;
-        font-size: 45px;
-      }
-    }
-  }
-
+@media (min-width: 768px) {
   .wave-wrapper {
     bottom: 30px;
 
@@ -174,52 +143,18 @@ header {
   header {
     text-align: left;
 
-    .logo {
-      top: 25px;
-      right: 20px;
-      width: 220px;
-    }
-
     .title {
       left: 25vw;
-
-      h1 {
-        font-size: 55px;
-      }
-
-      h2 {
-        font-size: 35px;
-      }
     }
 
     .media {
       top: 45%;
-      left: 25vw;
-
-      &__link {
-        margin: 0 50px 0 2px;
-      }
-
-      &__link i {
-        font-size: 45px;
-        transition: 0.2s;
-
-        &:hover {
-          color: $rose;
-        }
-      }
+      left: calc(25vw - 15px);
     }
   }
 }
 
 @media (min-width: 1280px) {
-  header {
-    .logo {
-      top: 30px;
-      right: 25px;
-      width: 250px;
-    }
-  }
   .wave {
     background-size: 50% 120px;
   }

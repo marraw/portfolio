@@ -33,9 +33,17 @@ export class NavigationComponent implements AfterViewInit {
   }
 
   scrollToContent(element: ElementRef): void {
-    this.hamburgerOpen = false;
-    element.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-    });
+    if (this.hamburgerOpen === true) {
+      this.hamburgerOpen = false;
+      setTimeout(() => {
+        element.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }, 200);
+    } else {
+      element.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
   }
 }

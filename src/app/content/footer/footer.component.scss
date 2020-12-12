@@ -12,29 +12,11 @@ footer {
 
   .author {
     font-size: 1.2em;
-    color: $charcoal;
   }
 
   .media {
     &__link {
       margin: 0 15px;
-
-      i {
-        font-size: 1.8em;
-        color: $charcoal;
-      }
-    }
-  }
-}
-
-@media (min-width: 1024px) {
-  .media {
-    i {
-      transition: 0.2s;
-
-      &:hover {
-        color: darken($rose, 5%) !important;
-      }
     }
   }
 }

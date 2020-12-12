@@ -15,10 +15,9 @@
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 100;
+  z-index: 11;
   display: inline-block;
   padding: 10px;
-  transition: transform 0.3s;
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -50,13 +49,13 @@
 
 nav {
   position: fixed;
-  z-index: 99;
-  width: 100vw;
-  height: 100vh;
+  z-index: 10;
   top: 0;
   left: 0;
+  height: 100vh;
+  width: 100vw;
   transform: translateX(-100%);
-  transition: transform 0.3s;
+  transition: transform 0.2s;
   background-color: $white;
 
   .navlist {
@@ -67,20 +66,15 @@ nav {
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
 
     &__link {
-      display: flex;
-      align-items: center;
       font-size: 25px;
       padding: 5px 10px;
       cursor: pointer;
-      color: $charcoal;
 
       i {
         margin-right: 10px;
-        font-size: 20px;
       }
     }
   }
@@ -88,26 +82,25 @@ nav {
 
 .scroll-top {
   position: fixed;
-  right: 4vw;
-  bottom: 3vh;
-  border-color: transparent;
+  right: 5vw;
+  bottom: 5vh;
+  z-index: 5;
+  padding: 0 !important;
   background-color: transparent;
-  outline-color: darken($meadow, 10%);
-  cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.2s;
   transform: translateY(calc(150% + 5vh));
 
   i {
+    transition: color 0.2s;
+    margin-right: 0;
     color: darken($meadow, 10%);
-    font-size: 45px;
+    font-size: 3em;
   }
 }
 
-.menu-visible.scroll-top {
-  transform: translateY(0);
-}
-
 .menu-open {
+  transform: translate(0, 0);
+
   .hamburger__bar {
     background-color: transparent;
 
@@ -119,10 +112,6 @@ nav {
       transform: translateY(-8px) rotate(-45deg);
     }
   }
-
-  + nav {
-    transform: translateX(0);
-  }
 }
 
 @media (orientation: landscape) {
@@ -131,11 +120,6 @@ nav {
       top: 10%;
       height: 80%;
     }
-  }
-
-  .scroll-top {
-    right: 2vw;
-    bottom: 3vh;
   }
 }
 
@@ -147,28 +131,11 @@ nav {
 
   nav {
     width: 70vw;
-
-    .navlist {
-      &__link {
-        font-size: 35px;
-
-        i {
-          font-size: 25px;
-        }
-
-        &--cv {
-          font-size: 25px;
-        }
-      }
-    }
   }
 
   .scroll-top {
-    right: 5vw;
-    bottom: 4vh;
-
     i {
-      font-size: 65px;
+      font-size: 4em;
     }
   }
 }
@@ -191,30 +158,23 @@ nav {
       height: 40%;
       align-items: flex-start;
 
-      &__link {
-        font-size: 20px;
-        transform: scale(0.97);
+      &__link--cv i {
+        color: $white !important;
+      }
 
-        &:hover {
-          color: darken($meadow, 10%);
-          transform: scale(1);
-        }
+      &__link:hover,
+      &__link:hover i {
+        color: darken($meadow, 10%);
       }
     }
   }
 
   .scroll-top {
-    right: 5vw;
-    bottom: 4vh;
-
     i {
-      font-size: 65px;
-      transition: 0.2s;
-      transform: scale(0.96);
+      font-size: 5em;
 
       &:hover {
         color: darken($meadow, 20%);
-        transform: scale(1);
       }
     }
   }
@@ -228,15 +188,6 @@ nav {
       &__link {
         font-size: 25px;
       }
-    }
-  }
-
-  .scroll-top {
-    right: 6vw;
-    bottom: 7vh;
-
-    i {
-      font-size: 70px;
     }
   }
 }

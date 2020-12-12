@@ -1,6 +1,7 @@
 <button
   type="button"
   class="hamburger"
+  aria-label="Open menu"
   (click)="hamburgerOpen = !hamburgerOpen"
   [ngClass]="hamburgerOpen ? 'menu-open' : ''"
 >
@@ -60,9 +61,9 @@
 
 <button
   type="button"
-  class="scroll-top"
+  class="scroll-top btn"
   aria-label="Scroll top"
-  [ngClass]="showNav ? 'menu-visible' : ''"
+  [ngClass]="showNav ? 'menu-open' : ''"
   (click)="scrollToContent(content[0])"
   (keyup)="scrollToContent(content[0])"
 >

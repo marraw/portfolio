@@ -13,10 +13,11 @@
   }
 
   i {
+    margin-right: 10px;
     width: 45px;
     grid-area: icon;
     font-size: 2.2em;
-    transition: 0.2s;
+    transition: color 0.2s;
   }
 
   strong {
@@ -24,6 +25,7 @@
   }
 
   span {
+    word-break: break-all;
     grid-area: text;
   }
 }
@@ -50,14 +52,6 @@
     textarea {
       margin: 10px 0;
       height: 12em;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .contact-method {
-    i {
-      width: 65px;
     }
   }
 }
