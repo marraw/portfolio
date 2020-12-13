@@ -52,6 +52,15 @@
     textarea {
       margin: 10px 0;
       height: 12em;
+      resize: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-method {
+    i {
+      margin-right: 15px;
     }
   }
 }

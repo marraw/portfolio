@@ -90,6 +90,7 @@ nav {
   background-color: transparent;
   transition: transform 0.2s;
   transform: translateY(calc(150% + 5vh));
+  outline: 0;
 
   i {
     transition: color 0.2s;

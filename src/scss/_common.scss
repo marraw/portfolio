@@ -27,6 +27,7 @@ input,
 textarea,
 button {
   outline-color: $seaweed;
+  -moz-outline-color: $seaweed;
 }
 
 .media-icon {
@@ -49,6 +50,7 @@ button {
   font-size: 1em !important;
   transition: background-color 0.2s;
   cursor: pointer;
+  -moz-outline-color: $seaweed;
 
   i {
     margin-right: 10px;
@@ -120,7 +122,7 @@ button {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (orientation: landscape) {
   a {
     -webkit-tap-highlight-color: transparent;
     outline-color: $seaweed;

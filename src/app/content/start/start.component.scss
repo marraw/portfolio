@@ -42,41 +42,37 @@ header {
   }
 }
 
-// Waves animation adapted from Jelena Jovanovic's project and modified by me.
-.wave-wrapper {
+.wave-box {
   overflow: hidden;
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
   top: 0;
-  margin: auto;
+  bottom: 5vh;
+  width: 100%;
 
   &__inner {
     position: absolute;
     width: 100%;
     overflow: hidden;
     height: calc(100% + 1px);
-    bottom: -1px;
     background-image: linear-gradient(
       to top,
-      lighten($meadow, 25%) 20%,
-      lighten($seaweed, 15%) 80%
+      lighten($meadow, 25%) 30%,
+      lighten($seaweed, 15%) 70%
     );
   }
 }
 
-.bg-top {
+.bg--top {
   z-index: 3;
   opacity: 0.5;
 }
 
-.bg-mid {
+.bg--mid {
   z-index: 2;
   opacity: 0.75;
 }
 
-.bg-bot {
+.bg--bot {
   z-index: 1;
 }
 
@@ -84,25 +80,25 @@ header {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 200%;
-  height: 100%;
-  background-size: 50% 40px;
+  width: 300%;
+  height: 15%;
+  background-size: 50% 30px;
   background-repeat: repeat no-repeat;
   background-position: 0 bottom;
   transform-origin: center bottom;
 }
 
-.wave-animation .wave-top {
+.wave--top {
   background-image: url(../../../assets/waves/wave-top.png);
   animation: move_wave 5s linear infinite;
 }
 
-.wave-animation .wave-mid {
+.wave--mid {
   background-image: url(../../../assets/waves/wave-mid.png);
   animation: move_wave 15s linear infinite;
 }
 
-.wave-animation .wave-bot {
+.wave--bot {
   background-image: url(../../../assets/waves/wave-bot.png);
   animation: move_wave 20s linear infinite;
 }
@@ -112,7 +108,7 @@ header {
     transform: translateX(0) scaleY(1);
   }
   50% {
-    transform: translateX(-25%) scaleY(0.55);
+    transform: translateX(-25%) scaleY(0.5);
   }
   100% {
     transform: translateX(-50%) scaleY(1);
@@ -128,15 +124,15 @@ header {
       top: 55%;
     }
   }
+
+  .wave {
+    background-size: 50% 50px;
+  }
 }
 
 @media (min-width: 768px) {
-  .wave-wrapper {
-    bottom: 30px;
-
-    .wave {
-      background-size: 50% 80px;
-    }
+  .wave {
+    background-size: 50% 70px;
   }
 }
 
@@ -153,10 +149,14 @@ header {
       left: calc(25vw - 15px);
     }
   }
+
+  .wave {
+    background-size: 50% 90px;
+  }
 }
 
 @media (min-width: 1280px) {
   .wave {
-    background-size: 50% 120px;
+    background-size: 50% 110px;
   }
 }
