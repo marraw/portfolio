@@ -3,7 +3,6 @@
 }
 
 body {
-  // background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   background: linear-gradient(to bottom, #111119, $dark);
 }
 
@@ -13,6 +12,7 @@ body {
 
 a {
   outline-color: transparent;
+  -moz-outline-color: transparent;
   -webkit-tap-highlight-color: rgba($orange, 0.3);
 
   &:focus i,
@@ -37,18 +37,18 @@ h2 {
 }
 
 .btn {
-  outline-color: $orange;
   white-space: nowrap;
   padding: 10px 15px !important;
-  background-color: darken($orange, 10%);
-  border-radius: 8px;
+  background-color: darken($orange, 5%);
+  border-radius: 2px;
   color: $white !important;
   border: 0;
   font-size: 1em !important;
   transition: background-color 0.2s;
   cursor: pointer;
+  outline-color: 0;
   -webkit-tap-highlight-color: transparent;
-  -moz-outline-color: $orange;
+  -moz-outline-color: 0;
 
   i {
     margin-right: 10px;
@@ -58,12 +58,14 @@ h2 {
   &:focus,
   &:active,
   &:hover {
-    color: $white;
-    background-color: darken($orange, 25%);
+    background-color: darken($orange, 30%);
+    transform: translateX(0) !important;
   }
 }
 
 .page-section {
+  margin-top: 40px;
+
   &__title {
     margin: 0 0 40px 15%;
 
@@ -105,7 +107,6 @@ h2 {
 
 @media (orientation: landscape) {
   .page-section {
-    margin: 0 30px;
     display: flex;
     flex-wrap: wrap;
 
@@ -130,7 +131,6 @@ h2 {
   }
 
   .page-section {
-    margin-top: 20px;
     display: flex;
     align-items: center;
 

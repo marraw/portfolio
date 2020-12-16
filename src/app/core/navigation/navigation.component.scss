@@ -86,17 +86,21 @@ nav {
   right: 5vw;
   bottom: 5vh;
   z-index: 5;
-  padding: 0 !important;
+  padding: 0;
+  border: 0;
   background-color: transparent;
   transition: transform 0.2s;
   transform: translateY(calc(150% + 5vh));
   outline: 0;
-  -moz-outline: 0;
+  cursor: pointer;
+  outline-color: 0;
+  -webkit-tap-highlight-color: transparent;
+  -moz-outline-color: 0;
 
   i {
     transition: color 0.2s;
     margin-right: 0;
-    color: darken($orange, 10%);
+    color: darken($orange, 5%);
     font-size: 3em;
   }
 }
@@ -165,25 +169,32 @@ nav {
       height: 40%;
       align-items: flex-start;
 
-      &__link--cv i {
-        color: $white !important;
-      }
+      &__link {
+        display: inline-block;
+        transition: 0.2s;
 
-      &__link:focus,
-      &__link:focus i,
-      &__link:hover,
-      &__link:hover i {
-        color: darken($orange, 10%);
+        &--cv i {
+          color: $white !important;
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+          transform: translateX(8%);
+          color: $orange;
+        }
       }
     }
   }
 
   .scroll-top {
     i {
+      transition: 0.2s;
       font-size: 5em;
 
       &:hover {
-        color: darken($orange, 25%);
+        color: darken($orange, 20%);
+        transform: scale(1.05);
       }
     }
   }
