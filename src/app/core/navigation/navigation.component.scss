@@ -7,7 +7,7 @@
   height: 3px;
   width: 100%;
   border-radius: 2%;
-  background-color: $charcoal;
+  background-color: $white;
   transition: 0.2s;
 }
 
@@ -56,7 +56,7 @@ nav {
   width: 100vw;
   transform: translateX(-100%);
   transition: transform 0.2s;
-  background-color: $white;
+  background-color: $dark;
 
   .navlist {
     position: absolute;
@@ -91,11 +91,12 @@ nav {
   transition: transform 0.2s;
   transform: translateY(calc(150% + 5vh));
   outline: 0;
+  -moz-outline: 0;
 
   i {
     transition: color 0.2s;
     margin-right: 0;
-    color: darken($meadow, 10%);
+    color: darken($orange, 10%);
     font-size: 3em;
   }
 }
@@ -168,9 +169,11 @@ nav {
         color: $white !important;
       }
 
+      &__link:focus,
+      &__link:focus i,
       &__link:hover,
       &__link:hover i {
-        color: darken($meadow, 10%);
+        color: darken($orange, 10%);
       }
     }
   }
@@ -180,7 +183,7 @@ nav {
       font-size: 5em;
 
       &:hover {
-        color: darken($meadow, 20%);
+        color: darken($orange, 25%);
       }
     }
   }

@@ -26,8 +26,8 @@
   .tooltip {
     visibility: hidden;
     width: 85px;
-    background-color: $charcoal;
-    color: $white;
+    background-color: lighten($dark, 20%);
+    color: #fff;
     text-align: center;
     border-radius: 4px;
     transform: translateY(8px);
@@ -45,7 +45,7 @@
       margin: -4px auto 0;
       transform: rotate(45deg);
       border-radius: 0;
-      background-color: $charcoal;
+      background-color: lighten($dark, 20%);
       z-index: -1;
     }
   }

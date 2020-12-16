@@ -1,18 +1,25 @@
 * {
-  color: $charcoal;
+  color: $white;
 }
 
 body {
-  background-color: $white;
+  // background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: linear-gradient(to bottom, #111119, $dark);
 }
 
 ::selection {
-  background-color: rgba($meadow, 0.6);
+  background-color: rgba($orange, 0.6);
 }
 
 a {
   outline-color: transparent;
-  -webkit-tap-highlight-color: rgba($meadow, 0.3);
+  -webkit-tap-highlight-color: rgba($orange, 0.3);
+
+  &:focus i,
+  &:hover i {
+    background-color: transparent !important;
+    color: darken($orange, 10%);
+  }
 }
 
 h1 {
@@ -23,66 +30,57 @@ h2 {
   font-size: 1.4em;
 }
 
-input,
-textarea,
-button {
-  outline-color: $seaweed;
-  -moz-outline-color: $seaweed;
-}
-
-.media-icon {
+.media__icon {
   font-size: 1.5em;
   transition: color 0.2s;
-
-  &:hover {
-    color: darken($rose, 10%);
-  }
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn {
-  outline-color: $seaweed;
+  outline-color: $orange;
   white-space: nowrap;
   padding: 10px 15px !important;
-  background-color: darken($meadow, 10%);
+  background-color: darken($orange, 10%);
   border-radius: 8px;
   color: $white !important;
   border: 0;
   font-size: 1em !important;
   transition: background-color 0.2s;
   cursor: pointer;
-  -moz-outline-color: $seaweed;
+  -webkit-tap-highlight-color: transparent;
+  -moz-outline-color: $orange;
 
   i {
     margin-right: 10px;
     color: $white;
   }
 
+  &:focus,
+  &:active,
   &:hover {
     color: $white;
-    background-color: darken($meadow, 20%);
+    background-color: darken($orange, 25%);
   }
 }
 
 .page-section {
   &__title {
-    margin-left: 15%;
-    color: $charcoal;
+    margin: 0 0 40px 15%;
 
     &::first-letter {
       content: "";
       font-size: 1.4em;
-      background-color: $meadow;
+      background-color: $orange;
     }
   }
 
   &__element {
     display: block;
-    margin: 30px auto;
+    margin: 50px auto;
     line-height: 1.5em;
     height: 100%;
     width: 85%;
     text-align: justify;
-    color: $charcoal;
   }
 }
 
@@ -123,11 +121,6 @@ button {
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  a {
-    -webkit-tap-highlight-color: transparent;
-    outline-color: $seaweed;
-  }
-
   h1 {
     font-size: 3em;
   }

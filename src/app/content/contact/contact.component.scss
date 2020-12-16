@@ -9,7 +9,7 @@
   justify-content: left;
 
   i:hover {
-    color: darken($meadow, 10%);
+    color: darken($orange, 10%);
   }
 
   i {
@@ -42,11 +42,13 @@
     input,
     textarea {
       padding: 2px;
-      font-size: 1.2em;
+      font-size: 1em;
       height: 1.8em;
       background-color: transparent;
       border: 2px solid transparent;
-      border-bottom: 2px solid rgba($charcoal, 0.2);
+      border-bottom: 2px solid rgba($white, 0.5);
+      outline-color: transparent;
+      -moz-outline-color: transparent;
     }
 
     textarea {

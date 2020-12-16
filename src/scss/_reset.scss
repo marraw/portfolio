@@ -6,6 +6,8 @@
 
 a {
   text-decoration: none;
+  outline: 0;
+  -moz-outline: 0;
 }
 
 li {
@@ -13,5 +15,6 @@ li {
 }
 
 button {
-  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+  -moz-outline: 0;
 }
