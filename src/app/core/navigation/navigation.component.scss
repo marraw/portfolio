@@ -21,6 +21,7 @@
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba($orange, 0.3);
 
   &__box {
     position: relative;
@@ -83,8 +84,8 @@ nav {
 
 .scroll-top {
   position: fixed;
-  right: 5vw;
-  bottom: 5vh;
+  right: 6vw;
+  bottom: 4vh;
   z-index: 5;
   padding: 0;
   border: 0;
@@ -101,7 +102,7 @@ nav {
     transition: color 0.2s;
     margin-right: 0;
     color: darken($orange, 5%);
-    font-size: 3em;
+    font-size: 3.5em;
   }
 }
 
@@ -169,6 +170,15 @@ nav {
       height: 40%;
       align-items: flex-start;
 
+      &__link.active-section {
+        transform: translate(8%);
+        color: $orange;
+
+        & i {
+          color: $orange;
+        }
+      }
+
       &__link {
         display: inline-block;
         transition: 0.2s;
@@ -177,11 +187,8 @@ nav {
           color: $white !important;
         }
 
-        &:focus,
-        &:active,
         &:hover {
-          transform: translateX(8%);
-          color: $orange;
+          @extend .active-section;
         }
       }
     }

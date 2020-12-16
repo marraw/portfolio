@@ -1,6 +1,6 @@
 @import "../../../scss/variables";
 
-.contact-method {
+.contact {
   margin: 20px 0;
   display: grid;
   grid-template-areas:
@@ -8,23 +8,29 @@
     "icon text";
   justify-content: left;
 
-  i:hover {
-    color: darken($orange, 10%);
-  }
-
-  i {
-    margin-right: 5px;
-    width: 45px;
+  &__link {
     grid-area: icon;
-    font-size: 2.2em;
-    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus i,
+    &:hover i {
+      color: darken($orange, 10%);
+    }
+
+    i {
+      margin-right: 5px;
+      width: 45px;
+      font-size: 2.2em;
+      transition: color 0.2s;
+      -webkit-tap-highlight-color: rgba($orange, 0.3);
+    }
   }
 
-  strong {
+  &__title {
     grid-area: title;
   }
 
-  span {
+  &__content {
     word-break: break-all;
     grid-area: text;
   }
@@ -60,7 +66,7 @@
 }
 
 @media (min-width: 768px) {
-  .contact-method {
+  .contact {
     i {
       margin-right: 15px;
     }

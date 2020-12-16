@@ -20,7 +20,7 @@ header {
     z-index: 5;
 
     &__title {
-      margin: 10px 0;
+      margin: 15px 0;
       font-family: "Lato", sans-serif;
 
       .color {
@@ -31,7 +31,7 @@ header {
 
   .media {
     position: absolute;
-    top: 42%;
+    top: 45%;
     left: 0;
     right: 0;
     z-index: 5;
@@ -43,98 +43,141 @@ header {
   }
 }
 
-// Stars animation made by @screenshake linkedin.com/in/saranshsinha
-.stars-container {
-  height: 100vh;
+// animation created by wontem https://codepen.io/wontem
+.sphere-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.view {
+  @extend .sphere-position;
+
+  top: 35%;
   overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
 
-  @function multiple-box-shadow($n) {
-    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+.plane {
+  width: 140px;
+  height: 140px;
+  transform-style: preserve-3d;
 
-    @for $i from 2 through $n {
-      $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
-    }
+  &.main {
+    @extend .sphere-position;
 
-    @return unquote($value);
-  }
+    transform: rotateX(60deg) rotateZ(-30deg);
+    animation: rotate 20s infinite linear;
 
-  $shadows-small: multiple-box-shadow(700);
-  $shadows-medium: multiple-box-shadow(200);
-  $shadows-big: multiple-box-shadow(100);
-
-  .stars-1 {
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-    animation: stars-animation 50s linear infinite;
-
-    &:after {
-      content: " ";
+    .circle {
+      width: 140px;
+      height: 140px;
       position: absolute;
-      top: 2000px;
-      width: 1px;
-      height: 1px;
-      background: transparent;
-      box-shadow: $shadows-small;
-    }
-  }
+      transform-style: preserve-3d;
+      border-radius: 100%;
 
-  .stars-2 {
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-    animation: stars-animation 100s linear infinite;
+      box-sizing: border-box;
+      box-shadow: 0 0 60px rgba(crimson, 1), inset 0 0 60px rgba(crimson, 1);
 
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 2000px;
-      width: 2px;
-      height: 2px;
-      background: transparent;
-      box-shadow: $shadows-medium;
-    }
-  }
+      &::before,
+      &::after {
+        @extend .sphere-position;
 
-  .stars-3 {
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-    animation: stars-animation 150s linear infinite;
+        content: "";
+        display: block;
+        width: 10%;
+        height: 10%;
+        border-radius: 100%;
+        background: rgba(crimson, 1);
 
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 2000px;
-      width: 3px;
-      height: 3px;
-      background: transparent;
-      box-shadow: $shadows-big;
+        box-sizing: border-box;
+        box-shadow: 0 0 60px 2px rgba(crimson, 1);
+      }
+
+      &::before {
+        transform: translateZ(-90px);
+      }
+
+      &::after {
+        transform: translateZ(90px);
+      }
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transform: rotateZ($i / 5 * 360deg) rotateX(63.435deg);
+        }
+      }
     }
   }
 }
 
-@keyframes stars-animation {
-  from {
-    transform: translateY(0px);
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
   }
 
-  to {
-    transform: translateY(-2000px);
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
 }
 
 @media (orientation: landscape) {
   header {
+    .author {
+      top: 15%;
+    }
+
     .logo {
       width: 25vw;
     }
     .media {
-      top: 55%;
+      top: 50%;
+    }
+  }
+
+  .view {
+    top: 25%;
+  }
+
+  .plane {
+    height: 120px;
+    width: 120px;
+
+    &.main {
+      .circle {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  header {
+    .media {
+      top: 40%;
+    }
+  }
+
+  .plane {
+    height: 240px;
+    width: 240px;
+
+    &.main {
+      .circle {
+        width: 240px;
+        height: 240px;
+
+        &::before {
+          transform: translateZ(-160px);
+        }
+
+        &::after {
+          transform: translateZ(160px);
+        }
+      }
     }
   }
 }
@@ -150,6 +193,31 @@ header {
     .media {
       top: 45%;
       left: calc(25vw - 15px);
+    }
+  }
+
+  .view {
+    top: 5%;
+    left: 25%;
+  }
+
+  .plane {
+    height: 280px;
+    width: 280px;
+
+    &.main {
+      .circle {
+        width: 280px;
+        height: 280px;
+
+        &::before {
+          transform: translateZ(-180px);
+        }
+
+        &::after {
+          transform: translateZ(180px);
+        }
+      }
     }
   }
 }

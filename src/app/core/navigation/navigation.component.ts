@@ -3,6 +3,8 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Renderer2,
+  ViewChild,
 } from '@angular/core';
 import { NavigationService } from './navigation.service';
 
@@ -16,8 +18,15 @@ export class NavigationComponent implements AfterViewInit {
   showNav = false;
 
   content!: ElementRef[];
+  @ViewChild('about') about!: ElementRef;
+  @ViewChild('skills') skills!: ElementRef;
+  @ViewChild('projects') projects!: ElementRef;
+  @ViewChild('contact') contact!: ElementRef;
 
-  constructor(private navigationService: NavigationService) {}
+  constructor(
+    private renderer: Renderer2,
+    private navigationService: NavigationService
+  ) {}
 
   ngAfterViewInit(): void {
     this.content = this.navigationService.content;
@@ -25,21 +34,40 @@ export class NavigationComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   showNavbar(): void {
-    if (window.pageYOffset >= window.innerHeight * 0.6) {
-      this.showNav = true;
-    } else {
-      this.showNav = false;
+    if (window.innerWidth < 1024) {
+      this.showNav = window.pageYOffset >= window.innerHeight * 0.9;
+    } else if (window.innerWidth >= 1024) {
+      this.showNav = window.pageYOffset >= window.innerHeight * 0.5;
+    }
+
+    if (this.showNav) {
+      this.renderer.removeClass(this.about.nativeElement, 'active-section');
+      this.renderer.removeClass(this.skills.nativeElement, 'active-section');
+      this.renderer.removeClass(this.projects.nativeElement, 'active-section');
+      this.renderer.removeClass(this.contact.nativeElement, 'active-section');
+
+      if (this.content[2].nativeElement.offsetTop > window.pageYOffset + 100) {
+        this.renderer.addClass(this.about.nativeElement, 'active-section');
+      } else if (
+        this.content[3].nativeElement.offsetTop >
+        window.pageYOffset + 100
+      ) {
+        this.renderer.addClass(this.skills.nativeElement, 'active-section');
+      } else if (
+        this.content[4].nativeElement.offsetTop >
+        window.pageYOffset + 100
+      ) {
+        this.renderer.addClass(this.projects.nativeElement, 'active-section');
+      } else {
+        this.renderer.addClass(this.contact.nativeElement, 'active-section');
+      }
     }
   }
 
   scrollToContent(element: ElementRef): void {
-    if (this.hamburgerOpen === true) {
+    if (window.innerWidth < 1024) {
       this.hamburgerOpen = false;
-      setTimeout(() => {
-        element.nativeElement.scrollIntoView({
-          behavior: 'smooth',
-        });
-      }, 200);
+      element.nativeElement.scrollIntoView();
     } else {
       element.nativeElement.scrollIntoView({
         behavior: 'smooth',

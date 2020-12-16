@@ -4,6 +4,7 @@
   aria-label="Open menu"
   (click)="hamburgerOpen = !hamburgerOpen"
   [ngClass]="hamburgerOpen ? 'menu-open' : ''"
+  *ngIf="showNav === true"
 >
   <div class="hamburger__box">
     <div class="hamburger__bar"></div>
@@ -17,6 +18,7 @@
   <ul class="navlist">
     <li>
       <a
+        #about
         tabindex="0"
         (click)="scrollToContent(content[1])"
         (keyup)="scrollToContent(content[1])"
@@ -26,6 +28,7 @@
     </li>
     <li>
       <a
+        #skills
         tabindex="0"
         (click)="scrollToContent(content[2])"
         (keyup)="scrollToContent(content[2])"
@@ -35,6 +38,7 @@
     </li>
     <li>
       <a
+        #projects
         tabindex="0"
         (click)="scrollToContent(content[3])"
         (keyup)="scrollToContent(content[3])"
@@ -44,6 +48,7 @@
     </li>
     <li>
       <a
+        #contact
         tabindex="0"
         (click)="scrollToContent(content[4])"
         (keyup)="scrollToContent(content[4])"
