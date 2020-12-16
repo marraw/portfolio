@@ -5,18 +5,29 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-top: 40px;
-  height: 180px;
+  // padding-bottom: 10px;
+  height: 220px;
   width: 100%;
   background-color: darken($dark, 5%);
 
+  .logo {
+    margin: -40px 0 -60px 0;
+    width: 40vw;
+    max-width: 200px;
+  }
+
   .author {
     font-size: 1.2em;
+    font-family: "Lato", sans-serif;
   }
 
   .media {
     &__link {
       margin: 0 15px;
     }
+  }
+
+  .copyright {
+    font-family: "Lato", sans-serif;
   }
 }

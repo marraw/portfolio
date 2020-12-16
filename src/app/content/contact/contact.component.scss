@@ -14,7 +14,7 @@
 
     &:focus i,
     &:hover i {
-      color: darken($orange, 10%);
+      color: darken($red, 10%);
     }
 
     i {
@@ -22,7 +22,7 @@
       width: 45px;
       font-size: 2.2em;
       transition: color 0.2s;
-      -webkit-tap-highlight-color: rgba($orange, 0.3);
+      -webkit-tap-highlight-color: rgba($red, 0.3);
     }
   }
 

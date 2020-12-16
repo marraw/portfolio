@@ -21,7 +21,7 @@
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba($orange, 0.3);
+  -webkit-tap-highlight-color: rgba($red, 0.3);
 
   &__box {
     position: relative;
@@ -101,7 +101,7 @@ nav {
   i {
     transition: color 0.2s;
     margin-right: 0;
-    color: darken($orange, 5%);
+    color: darken($red, 5%);
     font-size: 3.5em;
   }
 }
@@ -172,10 +172,10 @@ nav {
 
       &__link.active-section {
         transform: translate(8%);
-        color: $orange;
+        color: $red;
 
         & i {
-          color: $orange;
+          color: $red;
         }
       }
 
@@ -200,7 +200,7 @@ nav {
       font-size: 5em;
 
       &:hover {
-        color: darken($orange, 20%);
+        color: darken($red, 20%);
         transform: scale(1.05);
       }
     }

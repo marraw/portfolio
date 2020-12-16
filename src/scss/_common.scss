@@ -7,21 +7,23 @@ body {
 }
 
 ::selection {
-  background-color: rgba($orange, 0.6);
+  background-color: rgba($red, 0.6);
 }
 
 a {
   outline-color: transparent;
   -moz-outline-color: transparent;
-  -webkit-tap-highlight-color: rgba($orange, 0.3);
+  -webkit-tap-highlight-color: rgba($red, 0.3);
 }
 
 h1 {
   font-size: 1.8em;
+  font-family: "Lato", sans-serif;
 }
 
 h2 {
   font-size: 1.4em;
+  font-family: "Lato", sans-serif;
 }
 
 .media__icon {
@@ -33,7 +35,7 @@ h2 {
 .btn {
   white-space: nowrap;
   padding: 10px 15px !important;
-  background-color: darken($orange, 5%);
+  background-color: darken($red, 5%);
   border-radius: 2px;
   color: $white !important;
   border: 0;
@@ -52,7 +54,7 @@ h2 {
   &:focus,
   &:active,
   &:hover {
-    background-color: darken($orange, 30%);
+    background-color: darken($red, 30%);
     transform: translateX(0) !important;
   }
 }
@@ -66,14 +68,14 @@ h2 {
     &::first-letter {
       content: "";
       font-size: 1.4em;
-      background-color: $orange;
+      background-color: $red;
     }
   }
 
   &__element {
     display: block;
     margin: 50px auto;
-    line-height: 1.5em;
+    line-height: 1.6em;
     height: 100%;
     width: 85%;
     text-align: justify;
@@ -128,7 +130,7 @@ h2 {
     &:focus .media__icon,
     &:hover .media__icon {
       background-color: transparent !important;
-      color: darken($orange, 10%);
+      color: darken($red, 10%);
     }
   }
 

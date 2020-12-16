@@ -6,10 +6,10 @@ header {
   .logo {
     position: absolute;
     z-index: 5;
-    top: 4vh;
-    right: 2vw;
-    width: 25vh;
-    max-width: 270px;
+    top: -2vh;
+    right: 3vw;
+    width: 18vh;
+    max-width: 200px;
   }
 
   .author {
@@ -24,7 +24,7 @@ header {
       font-family: "Lato", sans-serif;
 
       .color {
-        color: $orange;
+        color: $red;
       }
     }
   }
@@ -43,7 +43,7 @@ header {
   }
 }
 
-// animation created by wontem https://codepen.io/wontem
+// animation created by wontem https://codepen.io/wontem and modified by me
 .sphere-position {
   position: absolute;
   top: 0;
@@ -61,8 +61,8 @@ header {
 }
 
 .plane {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   transform-style: preserve-3d;
 
   &.main {
@@ -72,37 +72,14 @@ header {
     animation: rotate 20s infinite linear;
 
     .circle {
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
       position: absolute;
       transform-style: preserve-3d;
       border-radius: 100%;
 
       box-sizing: border-box;
       box-shadow: 0 0 60px rgba(crimson, 1), inset 0 0 60px rgba(crimson, 1);
-
-      &::before,
-      &::after {
-        @extend .sphere-position;
-
-        content: "";
-        display: block;
-        width: 10%;
-        height: 10%;
-        border-radius: 100%;
-        background: rgba(crimson, 1);
-
-        box-sizing: border-box;
-        box-shadow: 0 0 60px 2px rgba(crimson, 1);
-      }
-
-      &::before {
-        transform: translateZ(-90px);
-      }
-
-      &::after {
-        transform: translateZ(90px);
-      }
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
@@ -130,25 +107,26 @@ header {
     }
 
     .logo {
-      width: 25vw;
+      width: 15vw;
     }
+
     .media {
       top: 50%;
     }
   }
 
   .view {
-    top: 25%;
+    top: 20%;
   }
 
   .plane {
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
 
     &.main {
       .circle {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
       }
     }
   }
@@ -162,21 +140,13 @@ header {
   }
 
   .plane {
-    height: 240px;
-    width: 240px;
+    height: 320px;
+    width: 320px;
 
     &.main {
       .circle {
-        width: 240px;
-        height: 240px;
-
-        &::before {
-          transform: translateZ(-160px);
-        }
-
-        &::after {
-          transform: translateZ(160px);
-        }
+        width: 320px;
+        height: 320px;
       }
     }
   }
@@ -191,32 +161,42 @@ header {
     }
 
     .media {
-      top: 45%;
+      top: 38%;
       left: calc(25vw - 15px);
     }
   }
 
   .view {
     top: 5%;
+    left: 30%;
+  }
+
+  .plane {
+    height: 340px;
+    width: 340px;
+
+    &.main {
+      .circle {
+        width: 340px;
+        height: 340px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .view {
     left: 25%;
   }
 
   .plane {
-    height: 280px;
-    width: 280px;
+    height: 440px;
+    width: 440px;
 
     &.main {
       .circle {
-        width: 280px;
-        height: 280px;
-
-        &::before {
-          transform: translateZ(-180px);
-        }
-
-        &::after {
-          transform: translateZ(180px);
-        }
+        width: 440px;
+        height: 440px;
       }
     }
   }
