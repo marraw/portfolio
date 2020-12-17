@@ -147,7 +147,7 @@ nav {
 
   .scroll-top {
     i {
-      font-size: 4em;
+      font-size: 5em;
     }
   }
 }
@@ -170,25 +170,26 @@ nav {
       height: 40%;
       align-items: flex-start;
 
-      &__link.active-section {
+      &__link.active-link,
+      &__link.active-link i {
         transform: translate(8%);
         color: $red;
-
-        & i {
-          color: $red;
-        }
       }
 
       &__link {
         display: inline-block;
         transition: 0.2s;
 
+        i {
+          transition: 0.2s;
+        }
+
         &--cv i {
           color: $white !important;
         }
 
         &:hover {
-          @extend .active-section;
+          @extend .active-link;
         }
       }
     }

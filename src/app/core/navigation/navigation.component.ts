@@ -33,7 +33,7 @@ export class NavigationComponent implements AfterViewInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-  showNavbar(): void {
+  animateNav(): void {
     if (window.innerWidth < 1024) {
       this.showNav = window.pageYOffset >= window.innerHeight * 0.9;
     } else if (window.innerWidth >= 1024) {
@@ -41,25 +41,39 @@ export class NavigationComponent implements AfterViewInit {
     }
 
     if (this.showNav) {
-      this.renderer.removeClass(this.about.nativeElement, 'active-section');
-      this.renderer.removeClass(this.skills.nativeElement, 'active-section');
-      this.renderer.removeClass(this.projects.nativeElement, 'active-section');
-      this.renderer.removeClass(this.contact.nativeElement, 'active-section');
+      const clear = (element: ElementRef) => {
+        this.renderer.removeClass(element.nativeElement, 'active-link');
+      };
+      const activate = (element: ElementRef) => {
+        this.renderer.addClass(element.nativeElement, 'active-link');
+      };
 
       if (this.content[2].nativeElement.offsetTop > window.pageYOffset + 100) {
-        this.renderer.addClass(this.about.nativeElement, 'active-section');
+        activate(this.about);
+        clear(this.skills);
+        clear(this.projects);
+        clear(this.contact);
       } else if (
         this.content[3].nativeElement.offsetTop >
         window.pageYOffset + 100
       ) {
-        this.renderer.addClass(this.skills.nativeElement, 'active-section');
+        activate(this.skills);
+        clear(this.about);
+        clear(this.projects);
+        clear(this.contact);
       } else if (
         this.content[4].nativeElement.offsetTop >
-        window.pageYOffset + 100
+        window.pageYOffset + 200
       ) {
-        this.renderer.addClass(this.projects.nativeElement, 'active-section');
+        activate(this.projects);
+        clear(this.about);
+        clear(this.skills);
+        clear(this.contact);
       } else {
-        this.renderer.addClass(this.contact.nativeElement, 'active-section');
+        activate(this.contact);
+        clear(this.about);
+        clear(this.skills);
+        clear(this.projects);
       }
     }
   }

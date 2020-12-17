@@ -8,8 +8,9 @@
     "icon text";
   justify-content: left;
 
-  &__link {
+  &__icon {
     grid-area: icon;
+    align-self: center;
     -webkit-tap-highlight-color: transparent;
 
     &:focus i,
