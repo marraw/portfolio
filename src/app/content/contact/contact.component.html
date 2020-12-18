@@ -1,5 +1,5 @@
 <section class="page-section" #contact>
-  <h1 class="page-section__title">contact</h1>
+  <h2 class="page-section__title">contact</h2>
 
   <div class="page-section__element">
     <div class="contact">
@@ -52,6 +52,7 @@
           <label
             class="contact-form__label"
             for="name"
+            #nameLabel
             [ngClass]="name.value !== '' ? 'active-label' : ''"
             >Your name</label
           >
@@ -67,6 +68,7 @@
           <label
             class="contact-form__label"
             for="Email"
+            #emailLabel
             [ngClass]="email.value !== '' ? 'active-label' : ''"
             >Your email</label
           >
@@ -79,10 +81,17 @@
           />
         </div>
         <div class="contact-form__item">
+          <label
+            class="contact-form__label"
+            for="message"
+            #messageLabel
+            [ngClass]="message.value !== '' ? 'active-label' : ''"
+            >How can I help you?</label
+          >
           <textarea
             class="contact-form__input contact-form--message"
-            placeholder="How can I help you?"
             name="message"
+            id="message"
             formControlName="message"
           >
           </textarea>

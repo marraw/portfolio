@@ -21,10 +21,18 @@ header {
 
     &__title {
       margin: 15px 0;
-      font-family: "Lato", sans-serif;
+
+      &--name {
+        font-size: 1.8em;
+      }
+
+      &--dev {
+        font-size: 1.4em;
+      }
 
       .color {
         color: $red;
+        font-family: "Lato", sans-serif;
       }
     }
   }
@@ -134,6 +142,16 @@ header {
 
 @media (min-width: 768px) and (orientation: portrait) {
   header {
+    .author__title {
+      &--name {
+        font-size: 2.6em;
+      }
+
+      &--dev {
+        font-size: 2em;
+      }
+    }
+
     .media {
       top: 40%;
     }
@@ -157,12 +175,23 @@ header {
     text-align: left;
 
     .author {
-      left: 25vw;
+      top: 20%;
+      left: 20vw;
+
+      &__title {
+        &--name {
+          font-size: 3em;
+        }
+
+        &--dev {
+          font-size: 2.2em;
+        }
+      }
     }
 
     .media {
-      top: 38%;
-      left: calc(25vw - 15px);
+      top: 42%;
+      left: calc(20vw - 15px);
     }
   }
 
@@ -185,6 +214,20 @@ header {
 }
 
 @media (min-width: 1280px) {
+  header {
+    .author {
+      &__title {
+        &--name {
+          font-size: 3.4em;
+        }
+
+        &--dev {
+          font-size: 2.4em;
+        }
+      }
+    }
+  }
+
   .view {
     left: 25%;
   }

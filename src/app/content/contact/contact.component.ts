@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   OnInit,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 import {
@@ -25,8 +26,12 @@ export class ContactComponent implements OnInit, AfterViewInit {
   contactForm!: FormGroup;
   mailSent = false;
   @ViewChild('contact') contact!: ElementRef;
+  @ViewChild('nameLabel') nameLabel!: ElementRef;
+  @ViewChild('emailLabel') emailLabel!: ElementRef;
+  @ViewChild('messageLabel') messageLabel!: ElementRef;
 
   constructor(
+    private renderer: Renderer2,
     private builder: FormBuilder,
     private http: HttpClient,
     private navigationService: NavigationService
@@ -57,13 +62,19 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(input: message): void {
+    const resetLabel = (label: ElementRef) => {
+      this.renderer.removeClass(label.nativeElement, 'active-label');
+    };
     if (this.contactForm.valid) {
       this.http.post('https://formspree.io/f/mwkwrdgw', input).subscribe();
       this.mailSent = true;
+      resetLabel(this.nameLabel);
+      resetLabel(this.emailLabel);
+      resetLabel(this.messageLabel);
+      this.contactForm.reset();
       setTimeout(() => {
         this.mailSent = false;
       }, 4000);
-      this.contactForm.reset();
     }
   }
 }

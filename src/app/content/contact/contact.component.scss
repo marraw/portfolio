@@ -85,10 +85,6 @@
   &--message {
     height: 12em;
     resize: none;
-
-    &::placeholder {
-      color: lighten($dark, 60%);
-    }
   }
 
   &__error {

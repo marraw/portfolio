@@ -20,13 +20,8 @@ button {
   }
 }
 
-h1 {
-  font-size: 1.8em;
-  font-family: "Lato", sans-serif;
-}
-
+h1,
 h2 {
-  font-size: 1.4em;
   font-family: "Lato", sans-serif;
 }
 
@@ -72,6 +67,7 @@ h2 {
   margin-top: 40px;
 
   &__title {
+    font-size: 1.8em;
     margin: 0 0 40px 15%;
 
     &::first-letter {
@@ -92,15 +88,11 @@ h2 {
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
-  h1 {
-    font-size: 2.5em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
   .page-section {
+    &__title {
+      font-size: 2.5em;
+    }
+
     &__element {
       margin: 35px auto;
       width: 80%;
@@ -127,12 +119,8 @@ h2 {
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  h1 {
+  .page-section__title {
     font-size: 3em;
-  }
-
-  h2 {
-    font-size: 2em;
   }
 
   .media__link {
