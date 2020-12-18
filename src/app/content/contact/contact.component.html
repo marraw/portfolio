@@ -22,7 +22,7 @@
       <a
         class="contact__content"
         href="mailto:marek.rawdanowicz@outlook.com"
-        aria-label="Open email app"
+        tabindex="-1"
         rel="noopener"
         >marek.rawdanowicz@outlook.com</a
       >
@@ -40,16 +40,17 @@
       <a
         class="contact__content"
         href="tel:+48693073365"
-        aria-label="Call me"
+        tabindex="-1"
         rel="noopener"
         >693 073 365</a
       >
     </div>
 
     <div class="contact-form">
-      <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.value)">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
         <div class="contact-form__item">
           <input
+            class="contact-form__input"
             placeholder="Name"
             type="text"
             name="name"
@@ -58,6 +59,7 @@
         </div>
         <div class="contact-form__item">
           <input
+            class="contact-form__input"
             placeholder="Email"
             type="email"
             name="email"
@@ -66,13 +68,34 @@
         </div>
         <div class="contact-form__item">
           <textarea
+            class="contact-form__input contact-form--message"
             placeholder="How can I help you?"
             name="message"
             formControlName="message"
           >
           </textarea>
         </div>
-        <button [disabled]="!messageForm.valid" type="submit" class="btn">
+        <div class="contact-form__item">
+          <span
+            class="contact-form__error"
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            >Please enter your name.</span
+          >
+          <span
+            class="contact-form__error"
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            >Please enter valid email.</span
+          >
+          <span
+            class="contact-form__error"
+            *ngIf="message.invalid && (message.dirty || message.touched)"
+            >Please don't send me empty emails.</span
+          >
+          <span #success class="contact-form__success" *ngIf="mailSent"
+            >Thank you for message. I will contact you soon.</span
+          >
+        </div>
+        <button [disabled]="!contactForm.valid" type="submit" class="btn">
           <i class="fas fa-paper-plane"></i>Send
         </button>
       </form>

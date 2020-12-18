@@ -55,11 +55,11 @@
       visibility: hidden;
       transition: visibility 0.001s;
       color: $dark;
+    }
 
-      a {
-        margin: 0 15px;
-        font-size: 2.5em;
-      }
+    .media__link {
+      margin: 0 15px;
+      font-size: 2.5em;
     }
 
     &:focus,
@@ -75,6 +75,11 @@
       .project-card__technology {
         visibility: visible;
       }
+    }
+
+    &:focus-visible {
+      outline: lighten($red, 5%) 2px solid;
+      -moz-outline: lighten($red, 5%) 2px solid;
     }
 
     &--notes {

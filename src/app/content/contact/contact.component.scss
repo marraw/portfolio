@@ -11,6 +11,7 @@
   &__icon {
     grid-area: icon;
     align-self: center;
+    margin-right: 5px;
     -webkit-tap-highlight-color: transparent;
 
     &:focus i,
@@ -19,7 +20,6 @@
     }
 
     i {
-      margin-right: 5px;
       width: 45px;
       font-size: 2.2em;
       transition: color 0.2s;
@@ -45,30 +45,38 @@
     display: flex;
     flex-direction: column;
     margin: 15px 0;
+  }
 
-    input,
-    textarea {
-      padding: 2px;
-      font-size: 1em;
-      height: 1.8em;
-      background-color: transparent;
-      border: 2px solid transparent;
-      border-bottom: 2px solid $white;
-      outline-color: transparent;
-      -moz-outline-color: transparent;
-    }
+  &__input {
+    padding: 0 2px;
+    font-size: 1em;
+    height: 1.8em;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-bottom: 2px solid $white;
+    outline-color: transparent;
+    -moz-outline-color: transparent;
+  }
 
-    textarea {
-      margin: 10px 0;
-      height: 12em;
-      resize: none;
-    }
+  &--message {
+    height: 12em;
+    resize: none;
+  }
+
+  &__error {
+    font-family: "Lato", sans-serif;
+    color: lighten($red, 10%);
+  }
+
+  &__success {
+    font-family: "Lato", sans-serif;
+    color: lighten(#55a630, 10%);
   }
 }
 
 @media (min-width: 768px) {
   .contact {
-    i {
+    &__icon {
       margin-right: 15px;
     }
   }

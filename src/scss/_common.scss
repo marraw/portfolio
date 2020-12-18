@@ -3,17 +3,21 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #111119, $dark);
+  background: linear-gradient(to bottom, #111119, lighten($dark, 5%));
 }
 
 ::selection {
   background-color: rgba($red, 0.6);
 }
 
-a {
-  outline-color: transparent;
-  -moz-outline-color: transparent;
+a,
+button {
   -webkit-tap-highlight-color: rgba($red, 0.3);
+
+  &:focus-visible {
+    outline: lighten($red, 5%) 2px solid;
+    -moz-outline: lighten($red, 5%) 2px solid;
+  }
 }
 
 h1 {
@@ -39,8 +43,8 @@ h2 {
   border-radius: 2px;
   color: $white !important;
   border: 0;
-  font-size: 1em !important;
-  transition: background-color 0.2s;
+  font-size: 1em;
+  transition: background-color 0.2s, transform 0.2s;
   cursor: pointer;
   outline-color: 0;
   -webkit-tap-highlight-color: transparent;
@@ -54,8 +58,13 @@ h2 {
   &:focus,
   &:active,
   &:hover {
-    background-color: darken($red, 30%);
-    transform: translateX(0) !important;
+    background-color: darken($red, 20%);
+    transform: scale(1.1) translateX(0) !important;
+  }
+
+  &:disabled {
+    background-color: lighten($red, 10%);
+    transform: scale(1) !important;
   }
 }
 

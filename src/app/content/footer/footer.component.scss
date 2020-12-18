@@ -5,13 +5,12 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  // padding-bottom: 10px;
   height: 220px;
   width: 100%;
-  background-color: darken($dark, 5%);
+  background-color: $dark;
 
   .logo {
-    margin: -40px 0 -60px 0;
+    margin: -10px 0 -20px 0;
     width: 40vw;
     max-width: 200px;
   }

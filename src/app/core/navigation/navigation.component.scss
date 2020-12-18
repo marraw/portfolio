@@ -69,11 +69,19 @@ nav {
     flex-direction: column;
     justify-content: space-between;
 
+    &__cv {
+      align-self: center;
+    }
+
     &__link {
       font-size: 1.5em;
       padding: 5px 10px;
       white-space: nowrap;
       cursor: pointer;
+
+      &--cv {
+        font-size: 20px !important;
+      }
 
       i {
         margin-right: 10px;
@@ -92,11 +100,7 @@ nav {
   background-color: transparent;
   transition: transform 0.2s;
   transform: translateY(calc(150% + 5vh));
-  outline: 0;
   cursor: pointer;
-  outline-color: 0;
-  -webkit-tap-highlight-color: transparent;
-  -moz-outline-color: 0;
 
   i {
     transition: color 0.2s;
@@ -147,7 +151,7 @@ nav {
 
   .scroll-top {
     i {
-      font-size: 5em;
+      font-size: 6em;
     }
   }
 }
@@ -178,13 +182,14 @@ nav {
 
       &__link {
         display: inline-block;
-        transition: 0.2s;
+        transition: transform 0.2s, color 0.2s, background-color 0.2s;
 
         i {
-          transition: 0.2s;
+          transition: transform 0.2s, color 0.2s;
         }
 
         &--cv i {
+          transform: translateX(0) !important;
           color: $white !important;
         }
 
@@ -198,11 +203,11 @@ nav {
   .scroll-top {
     i {
       transition: 0.2s;
-      font-size: 5em;
+      font-size: 6em;
 
       &:hover {
         color: darken($red, 20%);
-        transform: scale(1.05);
+        transform: scale(1.1);
       }
     }
   }

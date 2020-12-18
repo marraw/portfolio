@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import {
   AfterViewInit,
   Component,
@@ -21,16 +22,30 @@ import { message } from './message';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit, AfterViewInit {
-  messageForm!: FormGroup;
+  contactForm!: FormGroup;
+  mailSent = false;
   @ViewChild('contact') contact!: ElementRef;
 
   constructor(
     private builder: FormBuilder,
+    private http: HttpClient,
     private navigationService: NavigationService
   ) {}
 
+  get name() {
+    return this.contactForm.get('name')!;
+  }
+
+  get email() {
+    return this.contactForm.get('email')!;
+  }
+
+  get message() {
+    return this.contactForm.get('message')!;
+  }
+
   ngOnInit(): void {
-    this.messageForm = this.builder.group({
+    this.contactForm = this.builder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
@@ -42,7 +57,13 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(input: message): void {
-    console.log(input);
-    this.messageForm.reset();
+    if (this.contactForm.valid) {
+      this.http.post('https://formspree.io/f/mwkwrdgw', input).subscribe();
+      this.mailSent = true;
+      setTimeout(() => {
+        this.mailSent = false;
+      }, 4000);
+      this.contactForm.reset();
+    }
   }
 }

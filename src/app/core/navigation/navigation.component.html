@@ -31,7 +31,7 @@
         #skills
         tabindex="0"
         (click)="scrollToContent(content[2])"
-        (keyup)="scrollToContent(content[2])"
+        (keydown)="scrollToContent(content[2])"
         class="navlist__link"
         ><i class="fas fa-code"></i>Skills</a
       >
@@ -41,7 +41,7 @@
         #projects
         tabindex="0"
         (click)="scrollToContent(content[3])"
-        (keyup)="scrollToContent(content[3])"
+        (keydown)="scrollToContent(content[3])"
         class="navlist__link"
         ><i class="fas fa-th-large"></i>Projects</a
       >
@@ -51,14 +51,14 @@
         #contact
         tabindex="0"
         (click)="scrollToContent(content[4])"
-        (keyup)="scrollToContent(content[4])"
+        (keydown)="scrollToContent(content[4])"
         class="navlist__link"
         ><i class="fas fa-address-card"></i>Contact</a
       >
     </li>
     <li class="navlist__cv">
       <button class="navlist__link navlist__link--cv btn">
-        <i class="fas fa-file-download"></i>Download CV
+        <i class="fas fa-file-download"></i>Get CV
       </button>
     </li>
   </ul>
