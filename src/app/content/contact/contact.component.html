@@ -49,20 +49,32 @@
     <div class="contact-form">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
         <div class="contact-form__item">
+          <label
+            class="contact-form__label"
+            for="name"
+            [ngClass]="name.value !== '' ? 'active-label' : ''"
+            >Your name</label
+          >
           <input
             class="contact-form__input"
-            placeholder="Name"
             type="text"
             name="name"
+            id="name"
             formControlName="name"
           />
         </div>
         <div class="contact-form__item">
+          <label
+            class="contact-form__label"
+            for="Email"
+            [ngClass]="email.value !== '' ? 'active-label' : ''"
+            >Your email</label
+          >
           <input
             class="contact-form__input"
-            placeholder="Email"
             type="email"
             name="email"
+            id="email"
             formControlName="email"
           />
         </div>
@@ -75,7 +87,10 @@
           >
           </textarea>
         </div>
-        <div class="contact-form__item">
+        <button [disabled]="!contactForm.valid" type="submit" class="btn">
+          <i class="fas fa-paper-plane"></i>Send
+        </button>
+        <div class="contact-form__item contact-form__item--errors">
           <span
             class="contact-form__error"
             *ngIf="name.invalid && (name.dirty || name.touched)"
@@ -95,9 +110,6 @@
             >Thank you for message. I will contact you soon.</span
           >
         </div>
-        <button [disabled]="!contactForm.valid" type="submit" class="btn">
-          <i class="fas fa-paper-plane"></i>Send
-        </button>
       </form>
     </div>
   </div>

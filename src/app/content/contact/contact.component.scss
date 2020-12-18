@@ -45,6 +45,10 @@
     display: flex;
     flex-direction: column;
     margin: 15px 0;
+
+    &--errors {
+      height: 100px;
+    }
   }
 
   &__input {
@@ -56,11 +60,35 @@
     border-bottom: 2px solid $white;
     outline-color: transparent;
     -moz-outline-color: transparent;
+
+    &:-webkit-autofill {
+      box-shadow: 0;
+      border: 0;
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0px 1000px lighten($dark, 5%) inset;
+    }
+  }
+
+  &__label {
+    margin-left: 2px;
+    z-index: -1;
+    color: lighten($dark, 60%);
+    transform: translateY(100%);
+    transition: transform 0.2s, font-size 0.2s;
+  }
+
+  .active-label {
+    transform: translateY(0);
+    font-size: 0.6em;
   }
 
   &--message {
     height: 12em;
     resize: none;
+
+    &::placeholder {
+      color: lighten($dark, 60%);
+    }
   }
 
   &__error {
