@@ -6,7 +6,6 @@ header {
   .logo {
     position: absolute;
     z-index: 5;
-    top: 2vh;
     right: 3vw;
     width: 15vh;
     max-width: 200px;
@@ -229,17 +228,17 @@ header {
   }
 
   .view {
-    left: 25%;
+    left: 20%;
   }
 
   .plane {
-    height: 440px;
-    width: 440px;
+    height: 460px;
+    width: 460px;
 
     &.main {
       .circle {
-        width: 440px;
-        height: 440px;
+        width: 460px;
+        height: 460px;
       }
     }
   }
