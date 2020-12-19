@@ -8,7 +8,7 @@
   width: 100%;
   border-radius: 2%;
   background-color: $white;
-  transition: 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .hamburger {
@@ -20,7 +20,6 @@
   padding: 10px;
   background-color: transparent;
   border-color: transparent;
-  cursor: pointer;
   -webkit-tap-highlight-color: rgba($red, 0.3);
 
   &__box {
@@ -78,6 +77,7 @@ nav {
       padding: 5px 10px;
       white-space: nowrap;
       cursor: pointer;
+      -webkit-tap-highlight-color: rgba($red, 0.3);
 
       &--cv {
         font-size: 20px !important;

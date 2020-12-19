@@ -1,12 +1,15 @@
 @import "../../../scss/variables";
 
 header {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 
   .logo {
     position: absolute;
     z-index: 5;
-    right: 3vw;
+    right: 2vw;
     width: 15vh;
     max-width: 200px;
   }
@@ -14,12 +17,11 @@ header {
   .author {
     position: absolute;
     top: 25%;
-    left: 0;
-    right: 0;
     z-index: 5;
 
     &__title {
       margin: 15px 0;
+      text-align: center;
 
       &--name {
         font-size: 1.8em;
@@ -39,8 +41,6 @@ header {
   .media {
     position: absolute;
     top: 45%;
-    left: 0;
-    right: 0;
     z-index: 5;
 
     &__link {
@@ -110,7 +110,7 @@ header {
 @media (orientation: landscape) {
   header {
     .author {
-      top: 15%;
+      top: 10%;
     }
 
     .logo {
@@ -118,7 +118,7 @@ header {
     }
 
     .media {
-      top: 50%;
+      top: 45%;
     }
   }
 
@@ -171,13 +171,13 @@ header {
 
 @media (min-width: 1024px) {
   header {
-    text-align: left;
-
     .author {
-      top: 20%;
+      top: 25%;
       left: 20vw;
 
       &__title {
+        text-align: left;
+
         &--name {
           font-size: 3em;
         }
@@ -189,7 +189,7 @@ header {
     }
 
     .media {
-      top: 42%;
+      top: 45%;
       left: calc(20vw - 15px);
     }
   }
@@ -228,7 +228,8 @@ header {
   }
 
   .view {
-    left: 20%;
+    top: 0;
+    left: 25%;
   }
 
   .plane {

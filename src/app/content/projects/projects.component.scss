@@ -17,9 +17,7 @@
     transition: transform 0.3s;
     border-radius: 2px;
     cursor: default;
-    outline: 0;
     -webkit-tap-highlight-color: transparent;
-    -moz-outline: 0;
 
     .project-card__info {
       visibility: hidden;
@@ -63,7 +61,6 @@
     }
 
     &:focus,
-    &:active,
     &:hover {
       transform: scale(1.05);
 
@@ -76,11 +73,6 @@
       .project-card__technology {
         visibility: visible;
       }
-    }
-
-    &:focus-visible {
-      outline: lighten($red, 5%) 2px solid;
-      -moz-outline: lighten($red, 5%) 2px solid;
     }
 
     &--notes {

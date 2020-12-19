@@ -5,10 +5,13 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 2px;
+  justify-content: center;
+  align-content: center;
   max-width: 600px;
 
-  i {
-    font-size: 60px;
+  svg {
+    height: 60px;
+    width: 60px;
   }
 }
 
@@ -17,8 +20,8 @@
   flex-direction: column;
   align-items: center;
 
-  i:hover,
-  i:active {
+  svg:focus,
+  svg:hover {
     + .tooltip {
       visibility: visible;
     }
@@ -55,21 +58,19 @@
 @media (min-width: 320px) {
   .icons {
     gap: 10px;
+
+    svg {
+      height: 70px;
+      width: 70px;
+    }
   }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
   .icons {
-    i {
-      font-size: 100px;
-    }
-  }
-}
-
-@media (orientation: landscape) {
-  .icons {
-    i {
-      font-size: 70px;
+    svg {
+      height: 100px;
+      width: 100px;
     }
   }
 }
@@ -78,8 +79,9 @@
   .icons {
     gap: 25px;
 
-    i {
-      font-size: 80px;
+    svg {
+      height: 90px;
+      width: 90px;
     }
   }
 }
