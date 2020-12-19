@@ -127,7 +127,7 @@ h2 {
     &:focus .media__icon,
     &:hover .media__icon {
       background-color: transparent !important;
-      color: darken($red, 10%);
+      color: darken($red, 10%) !important;
     }
   }
 
