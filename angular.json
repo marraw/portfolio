@@ -26,8 +26,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/assets"],
-            "styles": ["src/scss/styles.scss"],
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,8 +88,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/assets"],
-            "styles": ["src/scss/styles.scss"],
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -98,7 +106,9 @@
               "e2e/tsconfig.json",
               "tsconfig.server.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -163,5 +173,8 @@
       }
     }
   },
-  "defaultProject": "portfolio"
+  "defaultProject": "portfolio",
+  "cli": {
+    "analytics": "24fd8745-7205-4102-82dc-1b8d9c8fd6c0"
+  }
 }

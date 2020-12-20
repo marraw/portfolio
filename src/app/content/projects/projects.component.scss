@@ -114,8 +114,8 @@
 @media (min-width: 768px) and (orientation: portrait) {
   .page-section__element {
     .project-card {
-      height: 400px;
-      width: 400px;
+      height: 350px;
+      width: 350px;
     }
   }
 }
@@ -129,19 +129,8 @@
       "in-progress in-progress-2";
 
     .project-card {
-      height: 320px;
-      width: 320px;
-    }
-  }
-}
-
-@media (min-width: 1280px) {
-  .page-section__element {
-    flex-basis: 40%;
-
-    .project-card {
-      height: 380px;
-      width: 380px;
+      height: 300px;
+      width: 300px;
     }
   }
 }

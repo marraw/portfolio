@@ -79,10 +79,6 @@ nav {
       cursor: pointer;
       -webkit-tap-highlight-color: rgba($red, 0.3);
 
-      &--cv {
-        font-size: 20px !important;
-      }
-
       i {
         margin-right: 10px;
       }
@@ -151,7 +147,7 @@ nav {
 
   .scroll-top {
     i {
-      font-size: 6em;
+      font-size: 5em;
     }
   }
 }
@@ -166,7 +162,7 @@ nav {
   }
 
   nav {
-    width: 18vw;
+    width: 15vw;
     background-color: transparent;
 
     .navlist {
@@ -174,23 +170,28 @@ nav {
       height: 40%;
       align-items: flex-start;
 
-      &__link.active-link,
-      &__link.active-link i {
-        transform: translate(8%);
-        color: $red;
-      }
-
       &__link {
         display: inline-block;
         transition: transform 0.2s, color 0.2s, background-color 0.2s;
+        font-size: 1.2em;
 
         i {
           transition: transform 0.2s, color 0.2s;
         }
 
-        &--cv i {
-          transform: translateX(0) !important;
-          color: $white !important;
+        &--cv {
+          font-size: 1em;
+
+          & i {
+            transform: translateX(0) !important;
+            color: $white !important;
+          }
+        }
+
+        &.active-link,
+        &.active-link i {
+          transform: translate(8%);
+          color: $red;
         }
 
         &:hover {
@@ -203,23 +204,11 @@ nav {
   .scroll-top {
     i {
       transition: 0.2s;
-      font-size: 6em;
+      font-size: 5em;
 
       &:hover {
         color: darken($red, 20%);
         transform: scale(1.1);
-      }
-    }
-  }
-}
-
-@media (min-width: 1280px) {
-  nav {
-    width: 15vw;
-
-    .navlist {
-      &__link {
-        font-size: 25px;
       }
     }
   }

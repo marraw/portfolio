@@ -34,7 +34,7 @@ header {
 
       &--dev {
         width: 0;
-        font-size: 1.4em;
+        font-size: 1.6em;
         animation: typing 2s steps(40, end) both 2s,
           blink-caret 0.5s step-end infinite 2s;
       }
@@ -56,6 +56,7 @@ header {
       font-size: 25px;
 
       & i {
+        font-size: 1.2em;
         visibility: hidden;
         color: transparent;
         transition: color 3s;
@@ -187,7 +188,7 @@ header {
       }
 
       &--dev {
-        font-size: 2em;
+        font-size: 2.2em;
       }
     }
 
@@ -227,7 +228,7 @@ header {
 
       &__title {
         &--name {
-          font-size: 3em;
+          font-size: 2.6em;
         }
 
         &--dev {
@@ -237,7 +238,7 @@ header {
     }
 
     .media {
-      top: 45%;
+      top: 50%;
       left: calc(15vw - 15px);
     }
   }
@@ -270,33 +271,19 @@ header {
 }
 
 @media (min-width: 1280px) {
-  header {
-    .author {
-      &__title {
-        &--name {
-          font-size: 3.4em;
-        }
-
-        &--dev {
-          font-size: 2.4em;
-        }
-      }
-    }
-  }
-
   .view {
     top: 0;
     left: 25%;
   }
 
   .plane {
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
 
     &.main {
       .circle {
-        width: 600px;
-        height: 600px;
+        width: 500px;
+        height: 500px;
       }
     }
   }

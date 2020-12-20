@@ -5,18 +5,17 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 220px;
+  height: 200px;
   width: 100%;
   background-color: $dark;
 
   .logo {
-    margin: -10px 0 -20px 0;
-    width: 40vw;
-    max-width: 200px;
+    margin: -10px 0 -30px 0;
+    width: 200px;
   }
 
-  .author {
-    font-size: 1.2em;
+  .author,
+  .copyright {
     font-family: "Lato", sans-serif;
   }
 
@@ -24,9 +23,5 @@ footer {
     &__link {
       margin: 0 15px;
     }
-  }
-
-  .copyright {
-    font-family: "Lato", sans-serif;
   }
 }

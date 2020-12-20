@@ -23,6 +23,18 @@ svg {
   }
 }
 
+@-moz-document url-prefix() {
+  a,
+  button,
+  p,
+  div,
+  svg {
+    &:focus {
+      outline: $white 2px solid;
+    }
+  }
+}
+
 h1,
 h2 {
   font-family: "Lato", sans-serif;
@@ -80,9 +92,9 @@ h2 {
   &__element {
     display: block;
     margin: 50px auto;
-    line-height: 1.6em;
     height: 100%;
     width: 85%;
+    line-height: 1.5em;
     text-align: justify;
   }
 }
@@ -96,8 +108,6 @@ h2 {
     &__element {
       margin: 35px auto;
       width: 80%;
-      font-size: 20px;
-      line-height: 1.5;
     }
   }
 }
@@ -112,15 +122,24 @@ h2 {
     }
 
     &__element {
-      width: 0;
       flex-basis: 65%;
+      width: 0;
     }
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  .page-section__title {
-    font-size: 3em;
+  .page-section {
+    align-items: center;
+
+    &__title {
+      font-size: 2.6em;
+    }
+
+    &__element {
+      flex-basis: 65%;
+      margin: 20px auto;
+    }
   }
 
   .media__link {
@@ -128,27 +147,6 @@ h2 {
     &:hover .media__icon {
       background-color: transparent !important;
       color: darken($red, 10%) !important;
-    }
-  }
-
-  .page-section {
-    display: flex;
-    align-items: center;
-
-    &__element {
-      font-size: 20px;
-    }
-  }
-}
-
-@-moz-document url-prefix() {
-  a,
-  button,
-  p,
-  div,
-  svg {
-    &:focus {
-      outline: $white 2px solid;
     }
   }
 }
