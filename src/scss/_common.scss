@@ -6,6 +6,10 @@
   background-color: rgba($red, 0.6);
 }
 
+body {
+  background-color: #111119;
+}
+
 header,
 a,
 button,
@@ -107,13 +111,15 @@ i {
   .page-section {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 
     &__title {
       flex-basis: 100%;
     }
 
     &__element {
-      flex-basis: 65%;
+      margin: 10px auto;
+      flex-basis: 40%;
       width: 0;
     }
   }
@@ -133,7 +139,6 @@ i {
 
   .page-section {
     margin: 40px 20px 0 20px;
-    align-items: center;
 
     &__title {
       font-size: 2.6em;

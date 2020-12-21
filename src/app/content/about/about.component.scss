@@ -2,22 +2,9 @@
   max-width: 400px;
 }
 
-@media (orientation: landscape) {
-  .text,
-  .photo {
-    flex-basis: 40%;
-  }
-}
-
 @media (min-width: 1024px) {
   .text,
   .photo {
     flex-basis: 40%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .photo {
-    flex-basis: 30%;
   }
 }
