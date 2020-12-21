@@ -1,5 +1,31 @@
+@import "../scss/variables";
+
+.container {
+  display: grid;
+  grid-template-rows: 100vh auto auto;
+  grid-template-areas:
+    "start"
+    "content"
+    "footer";
+}
+
+.start {
+  grid-area: "start";
+}
+
+.content {
+  z-index: 4;
+  grid-area: "content";
+  background: $dark;
+}
+
+.footer {
+  z-index: 4;
+  grid-area: "footer";
+}
+
 @media (min-width: 1024px) {
   .content {
-    margin-left: 15vw;
+    padding-left: 15vw;
   }
 }

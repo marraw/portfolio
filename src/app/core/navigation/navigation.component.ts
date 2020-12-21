@@ -35,9 +35,9 @@ export class NavigationComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   animateNav(): void {
     if (window.innerWidth < 1024) {
-      this.showNav = window.pageYOffset >= window.innerHeight * 0.9;
+      this.showNav = window.pageYOffset >= window.innerHeight * 0.4;
     } else if (window.innerWidth >= 1024) {
-      this.showNav = window.pageYOffset >= window.innerHeight * 0.5;
+      this.showNav = window.pageYOffset >= window.innerHeight * 0.7;
     }
 
     if (this.showNav) {
@@ -63,7 +63,7 @@ export class NavigationComponent implements AfterViewInit {
         clear(this.contact);
       } else if (
         this.content[4].nativeElement.offsetTop >
-        window.pageYOffset + 200
+        window.pageYOffset + 100
       ) {
         activate(this.projects);
         clear(this.about);

@@ -13,11 +13,11 @@ import { NavigationService } from 'src/app/core/navigation/navigation.service';
   styleUrls: ['./start.component.scss'],
 })
 export class StartComponent implements AfterViewInit {
-  @ViewChild('start') start!: ElementRef;
+  @ViewChild('top') top!: ElementRef;
 
   constructor(private navigationService: NavigationService) {}
 
   ngAfterViewInit(): void {
-    this.navigationService.content[0] = this.start;
+    this.navigationService.content[0] = this.top;
   }
 }

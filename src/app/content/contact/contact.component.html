@@ -101,21 +101,21 @@
         </button>
         <div class="contact-form__item contact-form__item--errors">
           <span
-            class="contact-form__error"
+            class="contact-form__error contact-form__alert"
             *ngIf="name.invalid && (name.dirty || name.touched)"
             >Please enter your name.</span
           >
           <span
-            class="contact-form__error"
+            class="contact-form__error contact-form__alert"
             *ngIf="email.invalid && (email.dirty || email.touched)"
             >Please enter valid email.</span
           >
           <span
-            class="contact-form__error"
+            class="contact-form__error contact-form__alert"
             *ngIf="message.invalid && (message.dirty || message.touched)"
             >Please don't send me empty emails.</span
           >
-          <span #success class="contact-form__success" *ngIf="mailSent"
+          <span #success class="contact-form__success contact-form__alert" *ngIf="mailSent"
             >Thank you for message. I will contact you soon.</span
           >
         </div>

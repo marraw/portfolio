@@ -1,0 +1,293 @@
+@import "../../../scss/variables";
+
+.top {
+  height: 1px;
+  z-index: -2;
+}
+
+.start-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #111119;
+}
+
+.logo {
+  position: absolute;
+  right: 2vw;
+  width: 15vh;
+  max-width: 200px;
+}
+
+.start-content {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+
+  .author {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &__title {
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid transparent;
+
+      &--name {
+        font-size: 1.7em;
+        animation: typing-name 2s steps(40, end) both,
+          blink-caret 0.5s step-end 4;
+      }
+
+      &--dev {
+        font-size: 1.5em;
+        animation: typing-dev 2s steps(40, end) both 2s,
+          blink-caret 0.5s step-end infinite 2s;
+      }
+
+      &--color {
+        color: $red;
+      }
+    }
+  }
+
+  .buttons {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+
+    .btn {
+      animation: show-btn 1s both 4.2s;
+    }
+
+    .media__icon {
+      font-size: 1.75em;
+      animation: show-media 1s both 4.2s;
+    }
+  }
+}
+
+@keyframes typing-name {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16.4ch;
+  }
+}
+
+@keyframes typing-dev {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16ch;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $red;
+  }
+}
+
+@keyframes show-media {
+  from {
+    visibility: hidden;
+    color: transparent;
+  }
+  to {
+    visibility: visible;
+    color: $white;
+  }
+}
+
+@keyframes show-btn {
+  from {
+    visibility: hidden;
+    background-color: transparent;
+    color: transparent;
+  }
+  to {
+    visibility: visible;
+    background-color: darken($red, 5%);
+    color: $white;
+  }
+}
+
+.scrolldown {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  writing-mode: vertical-lr;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.7em;
+  font-size: 0.6em;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    height: 200%;
+    width: 2px;
+    background-color: $white;
+  }
+}
+
+// animation created by wontem https://codepen.io/wontem and modified by me
+.sphere-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
+}
+
+.view {
+  @extend .sphere-position;
+
+  top: 30%;
+  overflow: hidden;
+}
+
+.plane {
+  height: 70vw;
+  width: 70vw;
+  max-height: 400px;
+  max-width: 400px;
+  transform-style: preserve-3d;
+
+  &.main {
+    @extend .sphere-position;
+
+    transform: rotateX(60deg) rotateZ(-30deg);
+    animation: rotate 20s infinite linear;
+
+    .circle {
+      height: 70vw;
+      width: 70vw;
+      max-height: 400px;
+      max-width: 400px;
+      position: absolute;
+      transform-style: preserve-3d;
+      border-radius: 100%;
+
+      box-sizing: border-box;
+      box-shadow: 0 0 60px rgba(crimson, 1), inset 0 0 60px rgba(crimson, 1);
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transform: rotateZ($i / 5 * 360deg) rotateX(63.435deg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@media (orientation: landscape) {
+  .logo {
+    width: 15vw;
+  }
+
+  .start-content {
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .view {
+    top: 5%;
+    left: 35%;
+  }
+
+  .plane {
+    height: 60vh;
+    width: 60vh;
+    max-height: 450px;
+    max-width: 400px;
+
+    &.main {
+      .circle {
+        width: 60vh;
+        height: 60vh;
+        max-height: 450px;
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .start-content {
+    height: 250px;
+
+    .author {
+      &__title {
+        border-right: 5px solid transparent;
+
+        &--name {
+          font-size: 2.6em;
+        }
+
+        &--dev {
+          font-size: 2.4em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .start-content {
+    left: 30%;
+    height: 250px;
+
+    .author {
+      &__title {
+        border-right: 5px solid transparent;
+
+        &--name {
+          font-size: 2.6em;
+        }
+
+        &--dev {
+          font-size: 2.4em;
+        }
+      }
+    }
+  }
+}

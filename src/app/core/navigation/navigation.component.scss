@@ -73,7 +73,7 @@ nav {
     }
 
     &__link {
-      font-size: 1.5em;
+      font-size: 1.4em;
       padding: 5px 10px;
       white-space: nowrap;
       cursor: pointer;
@@ -177,15 +177,6 @@ nav {
 
         i {
           transition: transform 0.2s, color 0.2s;
-        }
-
-        &--cv {
-          font-size: 1em;
-
-          & i {
-            transform: translateX(0) !important;
-            color: $white !important;
-          }
         }
 
         &.active-link,

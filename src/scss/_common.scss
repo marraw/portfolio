@@ -2,19 +2,17 @@
   color: $white;
 }
 
-body {
-  background: linear-gradient(to bottom, #111119, lighten($dark, 5%));
-}
-
 ::selection {
   background-color: rgba($red, 0.6);
 }
 
+header,
 a,
 button,
 p,
 div,
-svg {
+svg,
+i {
   outline: 0;
   -webkit-tap-highlight-color: transparent;
 
@@ -24,26 +22,21 @@ svg {
 }
 
 @-moz-document url-prefix() {
+  header,
   a,
   button,
   p,
   div,
-  svg {
+  svg,
+  i {
     &:focus {
       outline: $white 2px solid;
     }
   }
 }
 
-h1,
-h2 {
-  font-family: "Lato", sans-serif;
-}
-
 .media__icon {
-  font-size: 1.5em;
   transition: color 0.2s;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .btn {
@@ -53,10 +46,8 @@ h2 {
   border-radius: 2px;
   color: $white !important;
   border: 0;
-  font-size: 1em;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, transform 0.2s, color 0.2s;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba($red, 0.3);
 
   i {
     margin-right: 10px;
@@ -129,7 +120,19 @@ h2 {
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
+  .btn {
+    &--cv {
+      font-size: 0.85em !important;
+
+      & i {
+        transform: translateX(0) !important;
+        color: $white !important;
+      }
+    }
+  }
+
   .page-section {
+    margin: 40px 20px 0 20px;
     align-items: center;
 
     &__title {
@@ -145,7 +148,6 @@ h2 {
   .media__link {
     &:focus .media__icon,
     &:hover .media__icon {
-      background-color: transparent !important;
       color: darken($red, 10%) !important;
     }
   }
