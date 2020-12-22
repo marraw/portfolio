@@ -1,7 +1,7 @@
 <section class="page-section" #contact>
-  <h2 class="page-section__title">contact</h2>
+  <h2 class="page-section__title" data-aos="fade-left">contact</h2>
 
-  <div class="page-section__element">
+  <div class="page-section__element" data-aos="fade-up">
     <div class="contact">
       <div class="contact__icon">
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
       >
     </div>
 
-    <div class="contact-form">
+    <div class="contact-form" data-aos="fade-up">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
         <div class="contact-form__item">
           <label
@@ -115,7 +115,10 @@
             *ngIf="message.invalid && (message.dirty || message.touched)"
             >Please don't send me empty emails.</span
           >
-          <span #success class="contact-form__success contact-form__alert" *ngIf="mailSent"
+          <span
+            #success
+            class="contact-form__success contact-form__alert"
+            *ngIf="mailSent"
             >Thank you for message. I will contact you soon.</span
           >
         </div>

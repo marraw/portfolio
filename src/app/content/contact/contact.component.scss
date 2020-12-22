@@ -99,3 +99,9 @@
     color: lighten(#55a630, 10%);
   }
 }
+
+@media (orientation: landscape) {
+  .page-section__element {
+    flex-basis: 70%;
+  }
+}

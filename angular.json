@@ -26,13 +26,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/scss/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/assets"],
+            "styles": ["node_modules/aos/dist/aos.css", "src/scss/styles.scss"],
+            "scripts": ["node_modules/aos/dist/aos.js"]
           },
           "configurations": {
             "production": {
@@ -88,12 +84,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/scss/styles.scss"
-            ],
+            "assets": ["src/assets"],
+            "styles": ["src/scss/styles.scss"],
             "scripts": []
           }
         },
@@ -106,9 +98,7 @@
               "e2e/tsconfig.json",
               "tsconfig.server.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -162,9 +152,7 @@
           "options": {
             "browserTarget": "portfolio:build:production",
             "serverTarget": "portfolio:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
