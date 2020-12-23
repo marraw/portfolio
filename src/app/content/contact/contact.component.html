@@ -1,7 +1,10 @@
 <section class="page-section" #contact>
   <h2 class="page-section__title" data-aos="fade-left">contact</h2>
 
-  <div class="page-section__element" data-aos="fade-up">
+  <div
+    class="page-section__element contact-section__element"
+    data-aos="fade-up"
+  >
     <div class="contact">
       <div class="contact__icon">
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -46,7 +49,7 @@
       >
     </div>
 
-    <div class="contact-form" data-aos="fade-up">
+    <div class="contact-form contact-section__element" data-aos="fade-up">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
         <div class="contact-form__item">
           <label

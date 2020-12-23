@@ -92,6 +92,31 @@ i {
     line-height: 1.5em;
     text-align: justify;
   }
+
+  .break-line {
+    margin: 25px auto;
+    max-width: 40vw;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgba($white, 0.6);
+  }
+
+  &__break {
+    &-line {
+      @extend .break-line;
+
+      transform: translate(-25%, 0);
+
+      &::after {
+        @extend .break-line;
+
+        content: "";
+        display: block;
+        transform: translate(50%, 10px);
+        margin-bottom: 40px;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
@@ -121,6 +146,14 @@ i {
       margin: 10px auto;
       flex-basis: 40%;
       width: 0;
+    }
+
+    .break-line {
+      max-width: 40vh;
+    }
+
+    &__break {
+      flex-basis: 100%;
     }
   }
 }

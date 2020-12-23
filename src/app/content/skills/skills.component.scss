@@ -10,8 +10,10 @@
   max-width: 600px;
 
   svg {
-    height: 50px;
-    width: 50px;
+    height: 20vw;
+    width: 20vw;
+    max-height: 80px;
+    max-width: 80px;
   }
 }
 
@@ -61,22 +63,13 @@
   }
 }
 
-@media (min-width: 320px) {
-  .icons {
-    gap: 10px;
-
-    svg {
-      height: 60px;
-      width: 60px;
-    }
-  }
-}
-
-@media (min-width: 768px) and (orientation: portrait) {
+@media (orientation: landscape) {
   .icons {
     svg {
-      height: 80px;
-      width: 80px;
+      height: 20vh;
+      width: 20vh;
+      max-height: 80px;
+      max-width: 80px;
     }
   }
 }
@@ -84,10 +77,5 @@
 @media (min-width: 1024px) {
   .icons {
     gap: 25px;
-
-    svg {
-      height: 80px;
-      width: 80px;
-    }
   }
 }
