@@ -64,6 +64,7 @@ nav {
     height: 60%;
     transform: translateX(-50%);
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: space-between;
 
@@ -166,7 +167,7 @@ nav {
 
     .navlist {
       top: 30%;
-      height: 40%;
+      height: 45%;
       align-items: flex-start;
 
       &__link {

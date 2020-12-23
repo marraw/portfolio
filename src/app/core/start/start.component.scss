@@ -46,14 +46,13 @@
       border-right: 3px solid transparent;
 
       &--name {
-        font-size: 1.7em;
-        animation: typing-name 2s steps(40, end) both,
-          blink-caret 0.5s step-end 4;
+        font-size: 1.6em;
+        animation: typing 2s steps(40, end) both, blink-caret 0.5s step-end 4;
       }
 
       &--dev {
-        font-size: 1.5em;
-        animation: typing-dev 2s steps(40, end) both 2s,
+        font-size: 1.2em;
+        animation: typing 2s steps(40, end) both 2s,
           blink-caret 0.5s step-end infinite 2s;
       }
 
@@ -81,21 +80,12 @@
   }
 }
 
-@keyframes typing-name {
+@keyframes typing {
   from {
     width: 0;
   }
   to {
-    width: 16.4ch;
-  }
-}
-
-@keyframes typing-dev {
-  from {
-    width: 0;
-  }
-  to {
-    width: 16ch;
+    width: 16.1ch;
   }
 }
 
@@ -260,11 +250,11 @@
         border-right: 5px solid transparent;
 
         &--name {
-          font-size: 2.6em;
+          font-size: 2.4em;
         }
 
         &--dev {
-          font-size: 2.4em;
+          font-size: 2em;
         }
       }
     }
@@ -281,11 +271,11 @@
         border-right: 5px solid transparent;
 
         &--name {
-          font-size: 2.6em;
+          font-size: 2.4em;
         }
 
         &--dev {
-          font-size: 2.4em;
+          font-size: 2em;
         }
       }
     }
