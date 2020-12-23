@@ -8,6 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -15,7 +16,7 @@ import {
 } from '@angular/forms';
 import { NavigationService } from 'src/app/core/navigation/navigation.service';
 
-import { message } from './message';
+import { Message } from './message';
 
 @Component({
   selector: 'app-contact',
@@ -37,16 +38,16 @@ export class ContactComponent implements OnInit, AfterViewInit {
     private navigationService: NavigationService
   ) {}
 
-  get name() {
-    return this.contactForm.get('name')!;
+  get name(): AbstractControl {
+    return this.contactForm.get('name') as FormControl;
   }
 
-  get email() {
-    return this.contactForm.get('email')!;
+  get email(): AbstractControl {
+    return this.contactForm.get('email') as FormControl;
   }
 
-  get message() {
-    return this.contactForm.get('message')!;
+  get message(): AbstractControl {
+    return this.contactForm.get('message') as FormControl;
   }
 
   ngOnInit(): void {
@@ -61,7 +62,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     this.navigationService.content[4] = this.contact;
   }
 
-  onSubmit(input: message): void {
+  onSubmit(input: Message): void {
     const resetLabel = (label: ElementRef) => {
       this.renderer.removeClass(label.nativeElement, 'active-label');
     };

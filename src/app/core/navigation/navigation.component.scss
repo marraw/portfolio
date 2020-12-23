@@ -64,7 +64,6 @@ nav {
     height: 60%;
     transform: translateX(-50%);
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: space-between;
 
@@ -163,12 +162,13 @@ nav {
 
   nav {
     width: 15vw;
+    max-width: 200px;
     background-color: transparent;
 
     .navlist {
-      top: 30%;
-      height: 45%;
-      align-items: flex-start;
+      top: 35%;
+      height: 40%;
+      max-height: 300px;
 
       &__link {
         display: inline-block;
