@@ -23,6 +23,10 @@ I'm always thinking about making my website accessible for users that are limite
 Layout is designed by me with the exception of animated sphere made by [wontem](https://codepen.io/wontem).
 Writing it from scratch and taking care of RWD was a nice challenge that helped me to understand UI and UX much better.
 
+## Devicon
+
+All of svg icons in the 'skills' section come from [Devicon v2](https://github.com/devicons/devicon).
+
 ## Favicon
 
 Favicon created by [Freepik](https://www.freepik.com/).
