@@ -10,12 +10,14 @@
     "tictactoe";
 
   .project-card {
-    height: 80vw;
-    width: 80vw;
+    height: 70vw;
+    width: 70vw;
     max-height: 350px;
     max-width: 350px;
     transition: transform 0.3s;
     border-radius: 2px;
+    box-shadow: 0 0 2px 1px $white;
+
     cursor: default;
 
     .project-card__info {
@@ -40,9 +42,10 @@
       &:last-of-type::after {
         content: "";
         display: block;
-        margin-top: 20px;
+        margin-top: 10px;
         height: 2px;
-        width: 180px;
+        border-radius: 2px;
+        width: 120px;
         background-color: $white;
       }
     }
@@ -63,7 +66,8 @@
     }
 
     &:focus,
-    &:hover {
+    &:hover,
+    &:focus-within {
       transform: scale(1.05);
 
       .project-card__info {
@@ -96,8 +100,18 @@
     grid-template-areas: "notes tictactoe";
 
     .project-card {
-      height: 70vh;
-      width: 70vh;
+      height: 60vh;
+      width: 60vh;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-section {
+    .project-card__technology:last-of-type::after {
+      height: 3px;
+      margin-top: 25px;
+      width: 160px;
     }
   }
 }

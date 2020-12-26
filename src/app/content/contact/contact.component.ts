@@ -75,7 +75,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       this.contactForm.reset();
       setTimeout(() => {
         this.mailSent = false;
-      }, 4000);
+      }, 5000);
     }
   }
 }
