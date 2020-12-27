@@ -1,6 +1,6 @@
 # Portfolio
 
-My portfolio website build with Angular CLI (version 11.0.2). I created it in order to show more details about me, contact methods and group together rest of my projects. Thank you for visiting!
+My portfolio website build with **Angular CLI** (version 11.0.2). I created it in order to show more details about me, contact methods and group together rest of my projects. Thank you for visiting!
 
 ## Technologies
 
@@ -32,16 +32,16 @@ To test your built SSR app locally.
 
 ## Server
 
-Website is deployed by me on Ubuntu server using NGINX, UFW and PM2. I'm using my own domain provided by [nazwa.pl](https://nazwa.pl/). It's build with Angular Universal (SSR) which improves SEO a lot.
+Website is deployed by me on **Ubuntu** server using **NGINX**, **PM2** and **UFW**. I'm using my own domain provided by [nazwa.pl](https://nazwa.pl/). It's build with **Angular Universal (SSR)** which improves **SEO** a lot.
 
 ## Accessibility
 
-My portfolio is accessible for users that are limited to keyboard or even NonVisual Desktop Access. To make sure that everything's fine I tested it with NVDA and Tab button by myself.
+My portfolio is accessible for users that are limited to keyboard or even NonVisual Desktop Access. To make sure that everything's fine I tested it with **NVDA** and Tab button by myself.
 
 ## Layout
 
 Layout is designed by me with the exception of animated sphere made by [wontem](https://codepen.io/wontem).
-Writing it from scratch and taking care of RWD was a nice challenge that helped me to understand UI and UX much better.
+Writing it from scratch and taking care of **RWD** was a nice challenge that helped me to understand UI and UX much better.
 
 ## Contact form
 
@@ -49,7 +49,7 @@ For contact form I'm using [Formspree](https://formspree.io/) backend service. I
 
 ## Devicon
 
-All of svg icons in the **skills** section come from [Devicon v2](https://github.com/devicons/devicon).
+All of **SVG** icons in the *skills* section come from [Devicon v2](https://github.com/devicons/devicon).
 
 ### Favicon
 
