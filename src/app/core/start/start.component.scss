@@ -41,19 +41,21 @@
 
     &__title {
       width: 0;
+      letter-spacing: 2px;
       overflow: hidden;
       white-space: nowrap;
       border-right: 3px solid transparent;
 
       &--name {
-        font-size: 1.6em;
-        animation: typing 2s steps(40, end) both, blink-caret 0.5s step-end 4;
+        font-size: 1.5em;
+        animation: typing-name 2s steps(40, end) both 0.2s,
+          blink-caret 0.5s step-end 4 0.2s;
       }
 
       &--dev {
-        font-size: 1.2em;
-        animation: typing 2s steps(40, end) both 2s,
-          blink-caret 0.5s step-end infinite 2s;
+        font-size: 1em;
+        animation: typing-dev 2s steps(40, end) both 2.2s,
+          blink-caret 0.5s step-end infinite 2.2s;
       }
 
       &--color {
@@ -70,22 +72,31 @@
     width: 200px;
 
     .btn {
-      animation: show-btn 1s both 4.2s;
+      animation: show-btn 0.8s both 4.2s;
     }
 
     .media__icon {
       font-size: 1.75em;
-      animation: show-media 1s both 4.2s;
+      animation: show-media 0.8s both 4.2s;
     }
   }
 }
 
-@keyframes typing {
+@keyframes typing-name {
   from {
     width: 0;
   }
   to {
-    width: 16.1ch;
+    width: 100%;
+  }
+}
+
+@keyframes typing-dev {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
   }
 }
 
@@ -250,11 +261,11 @@
         border-right: 5px solid transparent;
 
         &--name {
-          font-size: 2.4em;
+          font-size: 2.5em;
         }
 
         &--dev {
-          font-size: 2em;
+          font-size: 1.7em;
         }
       }
     }
@@ -271,11 +282,11 @@
         border-right: 5px solid transparent;
 
         &--name {
-          font-size: 2.4em;
+          font-size: 2.5em;
         }
 
         &--dev {
-          font-size: 2em;
+          font-size: 1.7em;
         }
       }
     }

@@ -77,6 +77,7 @@
 
   &__label {
     margin-left: 2px;
+    letter-spacing: 1px;
     z-index: 0;
     color: lighten($dark, 60%);
     transform: translateY(calc(100% + 2px));
@@ -104,7 +105,7 @@
 
 @media (orientation: landscape) {
   .contact-section__element {
-    flex-basis: 70%;
+    flex-basis: 50%;
   }
 }
 

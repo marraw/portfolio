@@ -4,14 +4,9 @@
   display: grid;
   grid-template-rows: 100vh auto auto;
   grid-template-areas:
-    "start"
     "content"
     "footer";
   overflow: hidden;
-}
-
-.start {
-  grid-area: "start";
 }
 
 .content {
