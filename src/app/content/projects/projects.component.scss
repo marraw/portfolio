@@ -6,12 +6,13 @@
   justify-items: center;
   gap: 40px;
   grid-template-areas:
+    "world"
     "notes"
     "tictactoe";
 
   .project-card {
-    height: 70vw;
-    width: 70vw;
+    height: 75vw;
+    width: 75vw;
     max-height: 350px;
     max-width: 350px;
     transition: transform 0.3s;
@@ -58,11 +59,14 @@
     }
 
     .media__link {
-      margin: 0 15px;
+      margin: 10px;
+      font-size: 1.6em;
+      line-height: 1.5;
+      white-space: nowrap;
     }
 
     .media__icon {
-      font-size: 3.5em;
+      margin-right: 8px;
     }
 
     &:focus,
@@ -81,6 +85,12 @@
       }
     }
 
+    &--world {
+      grid-area: world;
+      background-image: url(../../../assets/projects/worldoftechnology.png);
+      background-size: cover;
+    }
+
     &--notes {
       grid-area: notes;
       background-image: url(../../../assets/projects/notes.png);
@@ -97,11 +107,13 @@
 
 @media (orientation: landscape) {
   .projects-section {
-    grid-template-areas: "notes tictactoe";
+    grid-template-areas:
+      "world notes"
+      "tictactoe tictactoe";
 
     .project-card {
-      height: 60vh;
-      width: 60vh;
+      height: 70vh;
+      width: 70vh;
     }
   }
 }

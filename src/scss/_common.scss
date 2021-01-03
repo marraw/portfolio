@@ -39,6 +39,7 @@ i {
   }
 }
 
+.media__link,
 .media__icon {
   transition: color 0.2s;
 }
@@ -188,6 +189,8 @@ i {
   }
 
   .media__link {
+    &:focus,
+    &:hover,
     &:focus .media__icon,
     &:hover .media__icon {
       color: darken($red, 10%) !important;
