@@ -37,18 +37,17 @@
       background-color: transparent;
     }
 
+    .in-progress {
+      position: absolute;
+      margin: 10px 5px;
+      letter-spacing: 2px;
+      writing-mode: vertical-lr;
+      color: $white;
+      text-transform: uppercase;
+    }
+
     &__technology {
       font-size: 1.2em;
-
-      &:last-of-type::after {
-        content: "";
-        display: block;
-        margin-top: 10px;
-        height: 2px;
-        border-radius: 2px;
-        width: 120px;
-        background-color: $white;
-      }
     }
 
     &__links,
@@ -59,10 +58,13 @@
     }
 
     .media__link {
+      padding: 5px 10px;
       margin: 10px;
       font-size: 1.6em;
-      line-height: 1.5;
+      line-height: 1.8;
       white-space: nowrap;
+      background-color: rgba($white, 0.2);
+      border-radius: 2px;
     }
 
     .media__icon {
@@ -76,7 +78,7 @@
 
       .project-card__info {
         visibility: visible;
-        background-color: rgba($dark, 0.85);
+        background-color: rgba($dark, 0.95);
       }
 
       .project-card__links,
