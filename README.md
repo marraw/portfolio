@@ -14,20 +14,16 @@ In this project I'm using:
 
 ## Setup
 
-To install this project locally clone the repository and use **npm**.
-
+To install this project locally clone the repository and use **npm**.<br>
 `$ npm install`
 
-To work at **localhost:4200** in watch mode. Add `-o` flag to open automatically in your default browser.
+To work at **localhost:4200** in watch mode. Add `-o` flag to open automatically in your default browser.<br>
+`$ ng serve` 
 
-`$ npm serve` 
-
-To build SSR deploy-ready app. The outcome will be located at **/dist** folder.
-
+To build SSR deploy-ready app. The outcome will be located at **/dist** folder.<br>
 `$ npm run build:ssr`
 
-To test your built SSR app locally.
-
+To test your built SSR app locally.<br>
 `$ npm run serve:ssr`
 
 ## Server
