@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 import * as AOS from 'aos';
@@ -8,7 +9,10 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  constructor(private http: HttpClient) {}
+
   ngOnInit(): void {
     AOS.init();
+    this.http.get('/access-counter').subscribe();
   }
 }
