@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this.http.get('/access-counter').subscribe();
+    this.http.post('/access-counter').subscribe();
   }
 }
