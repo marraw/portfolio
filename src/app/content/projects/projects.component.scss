@@ -6,6 +6,7 @@
   justify-items: center;
   gap: 40px;
   grid-template-areas:
+    "bakery"
     "world"
     "notes"
     "tictactoe";
@@ -18,7 +19,7 @@
     transition: transform 0.3s;
     border-radius: 2px;
     box-shadow: 0 0 2px 1px $white;
-
+    background-size: cover;
     cursor: default;
 
     .project-card__info {
@@ -88,22 +89,24 @@
       }
     }
 
+    &--bakery {
+      grid-area: bakery;
+      background-image: url(../../../assets/projects/bakery.png);
+    }
+
     &--world {
       grid-area: world;
       background-image: url(../../../assets/projects/worldoftechnology.png);
-      background-size: cover;
     }
 
     &--notes {
       grid-area: notes;
       background-image: url(../../../assets/projects/notes.png);
-      background-size: cover;
     }
 
     &--tictactoe {
       grid-area: tictactoe;
       background-image: url(../../../assets/projects/tictactoe.png);
-      background-size: cover;
     }
   }
 }
@@ -111,8 +114,8 @@
 @media (orientation: landscape) {
   .projects-section {
     grid-template-areas:
-      "world notes"
-      "tictactoe tictactoe";
+      "bakery world"
+      "notes tictactoe";
 
     .project-card {
       height: 70vh;
